@@ -1,0 +1,51 @@
+﻿a:hover {
+    text-decoration:none;
+}
+.picInsta img {
+    max-width: 100%;
+}
+.picInsta {
+    display: inline-block;
+    margin: 1%;
+    width: 30%;
+    position:relative;
+}
+.picInsta div {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    display: flex;
+    transition: 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.picInsta:hover div {
+    opacity: 0.8;
+}
+.picInsta div i {
+    opacity: 1;
+    font-size: 5em;
+}
+#fotosAprovadas .picInsta div i {
+    color:red
+}
+#fotosNaoAprovadas .picInsta div i {
+    color: #82bdbd
+}
+.panel-heading .col-xs-3 {
+    position: absolute;
+}
+.displayFlex {
+    display:flex;
+    align-items:center;
+}
+.modal-body {
+    overflow: scroll;
+}
+.modal-body td, .modal-body th {
+    white-space: nowrap;
+}
