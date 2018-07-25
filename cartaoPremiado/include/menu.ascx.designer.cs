@@ -7,45 +7,63 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace cartaoPremiado {
+namespace cartaoPremiado.include {
     
     
-    public partial class WebForm1 {
+    public partial class menu {
         
         /// <summary>
-        /// Controle head.
+        /// Controle como.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::cartaoPremiado.include.head head;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor como;
         
         /// <summary>
-        /// Controle form1.
+        /// Controle A1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
         
         /// <summary>
-        /// Controle footer.
+        /// Controle premio.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::cartaoPremiado.include.footer footer;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor premio;
         
         /// <summary>
-        /// Controle scripts.
+        /// Controle faq.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::cartaoPremiado.include.scripts scripts;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor faq;
+        
+        /// <summary>
+        /// Controle fale.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor fale;
+        
+        /// <summary>
+        /// Controle onde.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor onde;
     }
 }

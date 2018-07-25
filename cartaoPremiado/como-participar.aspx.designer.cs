@@ -10,7 +10,7 @@
 namespace cartaoPremiado {
     
     
-    public partial class WebForm1 {
+    public partial class como_participar {
         
         /// <summary>
         /// Controle head.
@@ -22,13 +22,13 @@ namespace cartaoPremiado {
         protected global::cartaoPremiado.include.head head;
         
         /// <summary>
-        /// Controle form1.
+        /// Controle menu.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::cartaoPremiado.include.menu menu;
         
         /// <summary>
         /// Controle footer.
