@@ -19,7 +19,7 @@ namespace cartaoPremiado.admin {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UserControl head;
+        protected global::PromocaoBesni.admin.inc.head head;
         
         /// <summary>
         /// Controle menuTopo.
@@ -28,7 +28,7 @@ namespace cartaoPremiado.admin {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UserControl menuTopo;
+        protected global::PromocaoBesni.admin.inc.menu_topo menuTopo;
         
         /// <summary>
         /// Controle menu.
@@ -37,7 +37,7 @@ namespace cartaoPremiado.admin {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UserControl menu;
+        protected global::PromocaoBesni.admin.inc.menu menu;
         
         /// <summary>
         /// Controle contagemCadastros.
@@ -145,6 +145,6 @@ namespace cartaoPremiado.admin {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UserControl footer;
+        protected global::PromocaoBesni.admin.inc.footer footer;
     }
 }

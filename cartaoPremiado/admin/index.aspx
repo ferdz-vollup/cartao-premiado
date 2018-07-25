@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col-xs-12 text-right">
                                     <div class="huge" id="contagemCadastros" runat="server"></div>
-                                    <div>Cadastros efetuados</div>
+                                    <div>Clientes participantes</div>
                                 </div>
                             </div>
                         </div>
