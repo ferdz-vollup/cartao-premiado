@@ -1,0 +1,191 @@
+body, html {font-family: 'Open Sans', sans-serif;margin: 0px;padding: 0px;color: #231f20;height:100%;font-size: 16px;line-height: 150%;}
+body {overflow-x: hidden;}
+img {max-width: 100%;}
+a:hover {text-decoration: none;}
+.conteudo {max-width: 85%;margin: auto;position: relative;height: 100%;}
+.traco-vermelho {width: 70px;height: 6px;background-color: #ed2326;border-radius: 50px;margin:30px 0px;}
+.traco-vermelho.center, .traco-branco.center {margin: 30px auto;}
+.traco-branco {width: 70px;height: 6px;background-color: white;border-radius: 50px;margin:30px 0px;}
+hr {border:0px;}
+button.button-normal {border: 1px solid black;background-color: transparent;padding: 10px 25px;font-family: 'baseninebold';text-transform: uppercase;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;transition: all 0.2s ease-out;outline:none}
+button.button-normal a {color: #231f20;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;transition: all 0.2s ease-out;}
+button.button-normal:hover {background-color: #231f20;color:white;}
+button.button-normal:hover a {color:white;}
+.loader {border: 2px solid #f9f9f9;border-top: 2px solid #363636;border-radius: 50%;width: 20px;height: 20px;margin-right: 20px;margin-top: -3px;display: inline-block;vertical-align: middle;animation: spin 1s linear infinite;}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+/* FONTES */
+h1, h2, h3, h4, h5, h6 {margin: 0px;}
+h2 {line-height:50px;font-size:40px;}
+em a, em a:hover {text-decoration: underline;color: #bd2324;font-weight: 600;}
+@font-face {
+    font-family: 'baseninemedium';
+    src: url('../fonts/baseninesmallcaps-webfont.woff2') format('woff2'), url('../fonts/baseninesmallcaps-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'baseninebold';
+    src: url('../fonts/basenine_bold-webfont.woff2') format('woff2'), url('../fonts/basenine_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'd-din_condensedregular';
+    src: url('../fonts/d-dincondensed-webfont.woff2') format('woff2'), url('../fonts/d-dincondensed-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'd-din_condenseddinCnBd';
+    src: url('../fonts/d-dincondensed-bold-webfont.woff2') format('woff2'), url('../fonts/d-dincondensed-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'baseninebold_italic';
+    src: url('../fonts/basenine-bold-italic-webfont.woff2') format('woff2'), url('../fonts/basenine-bold-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.degrade-vermelho {background: -webkit-linear-gradient(#c3191f, #782a1d);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+.basenine {font-family: 'baseninemedium';font-weight: 600}
+.basenine-bold {font-family: 'baseninebold';}
+.basenine-bd-italic, .basenine-bold em {font-family: 'baseninebold_italic';}
+.din {font-family: 'd-din_condensedregular';}
+.din strong {font-family: 'd-din_condenseddinCnBd';}
+.din-bold {font-family: 'd-din_condenseddinCnBd';}
+.vermelho {color: #bd2324}
+.font40 {font-size:40px;line-height:50px;}
+
+
+/* ANIMACOES */
+.animation {opacity: 0;}
+.animation.ready-animation {opacity:1}
+/* SCALE */
+.animation[data-animation="scale"] {transform: scale(0);-webkit-transform: scale(0);-moz-transform: scale(0);-ms-transform: scale(0);-o-transform: scale(0);}
+.ready-animation[data-animation="scale"] {transform: scale(1);-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);}
+/* RIGHT */
+.animation[data-animation="right"] {transform: translateX(120%);-webkit-transform: translateX(120%);-moz-transform: translateX(120%);-ms-transform: translateX(120%);-o-transform: translateX(120%);}
+.ready-animation[data-animation="right"] {transform: translateX(0%);-webkit-transform: translateX(0%);-moz-transform: translateX(0%);-ms-transform: translateX(0%);-o-transform: translateX(0%);}
+/* LEFT */
+.animation[data-animation="left"] {transform: translateX(-120%);-webkit-transform: translateX(-120%);-moz-transform: translateX(-120%);-ms-transform: translateX(-120%);-o-transform: translateX(-120%);}
+.ready-animation[data-animation="left"] {transform: translateX(0%);-webkit-transform: translateX(0%);-moz-transform: translateX(0%);-ms-transform: translateX(0%);-o-transform: translateX(0%);}
+/* BOTTOM */
+.animation[data-animation="bottom"] {transform: translateY(120%);-webkit-transform: translateY(120%);-moz-transform: translateY(120%);-ms-transform: translateY(120%);-o-transform: translateY(120%);}
+.ready-animation[data-animation="bottom"] {transform: translateY(0%);-webkit-transform: translateY(0%);-moz-transform: translateY(0%);-ms-transform: translateY(0%);-o-transform: translateY(0%);}
+/* BOTTOM */
+.animation[data-animation="width"] {max-width:0px;}
+.ready-animation[data-animation="width"] {max-width:800px;}
+
+/* MENU */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {border: 0px;}
+a.navbar-brand {background-image: url(../images/logo-besni.png);width: 232px;height: 42px;background-size: cover;background-repeat: no-repeat;}
+nav.navbar.navbar-default {box-shadow: none;background-color: transparent;background-image: none;border: 0px;padding: 30px 0px;margin-bottom: 0px;}
+.navbar-default .navbar-nav > li > a {color: #231f20;font-weight: 400;padding: 15px;}
+.navbar-default .navbar-nav > li:last-child > a {padding-right:0px;}
+.navbar-default .navbar-nav > li > a.ativo {text-decoration: underline;}
+section#menu {position: fixed;z-index: 99;width: 100%;background-color: white;top: 0;}
+
+#banner {background-image: url(../images/vitrine-home.jpg);height: 798px;background-repeat: no-repeat;max-height: 80%;background-size: cover;position: relative;margin-top: 110px;margin-bottom: 80px;overflow: hidden;}
+#banner:after {bottom: 0;}
+#banner:not(.sem-tiras):after, #banner:not(.sem-tiras):before {content: ''; background-image: url(../images/tira-vitrine.jpg);height: 19px;width: 100%;display: block;position: absolute;z-index:3}
+#banner .conteudo > div, #banner .container > div {position: absolute;top: 50%;transform: translateY(-50%);max-width: 48%;}
+#banner .container {position:relative;height:100%;}
+#banner .estrela-vitrine {left: 0;margin-top: 8px;}
+#banner .estrela-vitrine img {max-height: 100%;}
+#banner .escrita-vitrine {right: 0;}
+
+#banner.banner-estrela {height:430px;max-height: 50%;}
+#banner.banner-estrela .estrela-vitrine {left: 50%;margin-top: 5px;max-width:28%;transform: translate(-50%, -50%);z-index:2}
+
+/* HOME */
+#home #tarja-cartao {background-image: url(../images/vitrine-home.jpg);height: 400px;background-repeat: no-repeat;max-height: 80%;background-size: cover;position: relative;overflow:hidden;}
+#home #tarja-cartao .conteudo > div {position: absolute;}
+#home #tarja-cartao .escrita {top: 50%;transform: translateY(-50%);right: 0;}
+#home #tarja-cartao .cartao-besni {height: 95%;bottom: 0;left: 0;margin-bottom: -1px;}
+#home #tarja-cartao .cartao-besni img {max-height: 100%;}
+#home #premiacao {margin-bottom:60px;}
+#home #premiacao h2 {margin: 60px 0px;}
+#home #premiacao .fundo-cinza {background-image: url(../images/fundo-premios.jpg);background-size: cover;height: 514px;text-align: left;padding: 35px 40px;}
+#home #premiacao .fundo-cinza p.txt {width: 300px;max-width: 100%;margin-top: 80px;}
+#home #premiacao .fundo-cinza h3 {line-height: 30px;}
+#home #premiacao .fundo-cinza h3.basenine em {font-size: 30px;}
+#home #premiacao .fundo-cinza > em {position: absolute;bottom: 35px;}
+#home #instagram h2 {margin-top:40px;}
+#home #instagram h3 {line-height: 43px;font-size: 33px;}
+#home #instagram #divInstagram {height: 180px;overflow: hidden;}
+#home #instagram #divInstagram ul {width: 1200%;height: 100%;padding: 0px;}
+#home #instagram #divInstagram ul li {position: relative;display: inline-block;border-top: none;border-bottom: none;opacity: 1;float: none;padding: 0px;margin: 15px 0;cursor: pointer;border:5px solid transparent;margin: 0px;padding: 10px;}
+#home #instagram #divInstagram ul li:hover {opacity: 1.0;}
+#home #instagram #divInstagram ul li img {height: 100%;filter: brightness(1.1);-webkit-filter: brightness(1.1);-moz-filter: brightness(1.1);-ms-filter: brightness(1.1);-o-filter: brightness(1.1);}
+#home #besni-proxima {background-image: url(../images/vitrine-home.jpg);padding: 70px 0px;margin-top: 50px;}
+#home #besni-proxima .btn-onde-estamos {font-family: 'baseninebold';border: 1px solid #231f20;background-color: transparent;color: #231f20;text-transform: uppercase;-webkit-appearance: none;padding: 10px 20px;font-size: 18px;margin-top: 10px;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;transition: all 0.2s ease-out;}
+#home #besni-proxima .btn-onde-estamos:hover {background-color: white;border: 1px solid white;}
+
+.redes {font-family: 'baseninemedium';font-size: 25px;margin-top: -5px;}
+.redes *:not(a) {display: inline-block;vertical-align: middle}
+.redes p {padding-top: 10px;}
+.redes a:focus {text-decoration: none;}
+
+/* COMO PARTICIPAR */
+#como-participar #banner {height:430px;max-height: 50%;}
+#como-participar #banner .conteudo {max-width:100%;overflow: hidden;}
+#como-participar #banner .estrela-vitrine {left: 50%;margin-top: 5px;max-width:24%;transform: translate(-50%, -50%);z-index:2}
+#como-participar #banner .conteudo .moedas {top: 8%;transform: none;}
+#como-participar #banner .conteudo .moedas-vitrine-direita {right: -4%;}
+#como-participar #banner .conteudo .moedas-vitrine-esquerda {left: -4%;}
+#como-participar #topicos .container > .row {margin-top: 80px;}
+#como-participar span.saiba-concorra {text-align: justify;display: block;font-size: 14px;}
+
+/* RESULTADOS */
+#resultados #banner {height:430px;max-height: 50%;}
+#resultados #banner .estrela-vitrine {right: -5%;left: auto;margin-top: 5px;height: 95%;}
+#resultados #banner .container .mulher-vitrine {height: 100%;width: auto;transform: none;top: 0;left: -5%;}
+#resultados #banner .mulher-vitrine img {width: auto;height: 100%;}
+#resultados .ganhadores {width: 300px;max-width: 100%;margin: auto;background-image: url(../images/fundo-vermelho-degrade.jpg);background-size: 100% 100%;padding: 20px 30px;padding-bottom: 30px;color: white;position: relative;}
+#resultados .ganhadores:after {width: calc(100% - 14px);height: calc(100% - 14px);content: '';position: absolute;border: 1px solid yellow;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+#resultados .ganhadores h2 {font-size: 35px;}
+#resultados .ganhadores h3 {font-weight: 500;font-size: 35px;}
+#resultados .ganhadores ul {padding: 0;max-width: 80%;margin: 0px auto;}
+#resultados .ganhadores ul li {list-style: none;text-align: left;padding: 0;margin: 30px 0px;font-family: 'baseninemedium';line-height: 25px;font-size: 20px;}
+#resultados .ganhadores ul li:last-child {margin-bottom:0px;}
+
+/* FAQ */
+#faq #banner {height:430px;max-height: 50%;}
+#faq #banner .cartao-vitrine {height: 95%;margin-top: -8px;max-width: none;transform: translate(-50%, -50%);margin-left: -20%;left: 50%;}
+#faq #banner .cartao-vitrine img {height: 100%;max-width: none;}
+#faq #banner .moedas.moedas-vitrine-direita {left: 50%;height: 100%;max-width: none;}
+#faq #banner .moedas.moedas-vitrine-direita img {position: absolute;top: 50%;transform: translateY(-50%);max-height: 100%;}
+#faq h3 {margin-bottom:20px;}
+
+/* FALE CONOSCO */
+#fale-conosco form {width: 900px;margin: auto;max-width: 100%;display: table;}
+input, textarea {background-color: #f9f9f9;border: 1px solid #f9f9f9;padding: 6px 15px;font-size: 16px;display: inline-table;margin: 0px 5px;margin-bottom: 10px;font-family: 'Roboto', sans-serif;color: #6a6a6a;outline:none}
+#fale-conosco form input.email, #fale-conosco form input.telefone {padding:6px 40px;}
+#fale-conosco form input.nome {width: calc(70% - 10px);}
+#fale-conosco form input.telefone {width: calc(30% - 10px);background-image: url(../images/icone-telefone.png);background-position: 15px center;background-repeat: no-repeat;}
+#fale-conosco form input.cpf {width: calc(50% - 10px);}
+#fale-conosco form input.email {width: calc(50% - 10px);background-image: url(../images/icone-email.png);background-position: 15px 6.5px;background-repeat: no-repeat;}
+#fale-conosco form textarea {width: calc(100% - 10px);height:200px;}
+#fale-conosco form button.button-normal {font-family: 'baseninebold';}
+#fale-conosco #formFaleConosco button {float: right;margin-right: 5px;outline: none;}
+#fale-conosco #formFaleConosco button.btn-enviar {margin-left:10px;}
+#fale-conosco .retorno-mensagem {float: left;margin-top: 10px;margin-left: 5px;}
+input.error, textarea.error {border: 1px solid #f00 !important;}
+
+/* ONDE ESTAMOS */
+#onde-estamos #map {width: 100%;height: 450px;}
+#onde-estamos .cep {width:100%;text-align:center}
+#onde-estamos .btn-buscar {margin-top:-20px;}
+
+/* RODAPE */
+#como-participar #rodape, #resultados #rodape, #faq #rodape, #fale-conosco #rodape{margin-top:80px;}
+#rodape {padding: 50px 0px;background-color: #f6f6f6;}
+#rodape .container > div {margin: 0px 50px}
+#rodape span {font-size: 12px;line-height: 18px;padding-right: 50px;display: block;}
+#rodape div[class*='col'] {display: inline-block;float: none;vertical-align: middle;}
