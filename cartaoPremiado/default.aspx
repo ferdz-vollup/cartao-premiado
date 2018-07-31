@@ -43,7 +43,7 @@
             Para concorrer aos Vales-Presente é só  ir até qualquer loja Besni e na compra de, no mínimo, R$ 250,00 (duzentos e cinquenta reais) em produtos com cartão Besni, durante o período de participação da promoção, você receberá 01 (um) cupom automaticamente para participar.
             <br>
             <br>
-            <em><a href="">saiba mais</a></em>
+            <em><a href="/como-participar.aspx">saiba mais</a></em>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
                         comprar efetuadas com o cartão Besni acima de
                         R$250,00 (duzentos e cinquenta reais)
                     </p>
-                    <em><a href="">saiba mais</a></em>
+                    <em><a href="/como-participar.aspx">saiba mais</a></em>
                 </div>
             </div>
         </div>
