@@ -10,7 +10,11 @@
 
 <head>
     <besni:head runat="server" ID="head" />
-    <style>.xml-btn>*{display:inline-block}</style>
+    <style>
+        .xml-btn > * {
+            display: inline-block
+        }
+    </style>
 </head>
 
 <body id="bodyInterna">
@@ -44,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="usuarios.aspx">
+                        <a href="clientes.aspx">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -83,7 +87,7 @@
                                     <i class="fa fa-credit-card-alt fa-2x"></i>
                                 </div>
                                 <div class="col-xs-12 text-right">
-                                    <div class="huge" id="contagemGastos" runat="server"></div>
+                                    <div class="huge" id="contagemGastos" runat="server">x</div>
                                     <div>Vendidos na promoção</div>
                                 </div>
                             </div>
@@ -105,7 +109,7 @@
                                     <i class="fa fa-instagram fa-2x"></i>
                                 </div>
                                 <div class="col-xs-12 text-right">
-                                    <div class="huge" id="contagemInstagram" runat="server"></div>
+                                    <div class="huge" id="contagemInstagram" runat="server">0</div>
                                     <div>Fotos do Instagram</div>
                                 </div>
                             </div>
@@ -124,14 +128,14 @@
             <div class="row">
                 <!-- DIV ÚLTIMOS RESULTADOS -->
                 <div class="col-lg-6">
-                    <div class="panel panel-default" style="min-height:430px">
+                    <div class="panel panel-default" style="min-height: 430px">
                         <div class="panel-heading">
-                            <i class="fa fa-university fa-fw"></i> Último sorteio
+                            <i class="fa fa-university fa-fw"></i>Último sorteio
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="list-group">
-                                <a href="http://www.loterias.caixa.gov.br/wps/portal/loterias/landing/federal" target="_blank" title="Conferir na CEF" class="list-group-item">
+                               <a href="http://www.loterias.caixa.gov.br/wps/portal/loterias/landing/federal" target="_blank" title="Conferir na CEF" class="list-group-item">
                                     <strong id="linha1" runat="server"></strong>
                                 </a>
                                 <a href="javascript:void(0);" class="list-group-item">
@@ -160,12 +164,14 @@
                                 </a>
                             </div>
                             <!-- /.list-group -->
-                            <a href="ganhadores.aspx" class="btn btn-default btn-block" style="float: left;margin-right:15px;width: 50%;">Veja os ganhadores</a>
+                            <a href="ganhadores.aspx" class="btn btn-default btn-block" style="float: left; margin-right: 15px; width: 50%;">Veja os ganhadores</a>
                             <div class="xml-btn">
                                 <p>Ganhadores</p>
-                                <a title="Fazer Download" href="/ajax/acoes.aspx?acao=donwloadGanhadores"><img src="../assets/imagens/ico-excel.png" alt="Fazer Download" style="margin-right:10px" width="34px"></a>
+                                <a title="Fazer Download" href="/ajax/acoes.aspx?acao=donwloadGanhadores">
+                                    <img src="../assets/imagens/ico-excel.png" alt="Fazer Download" style="margin-right: 10px" width="34px"></a>
                                 <p>Cupons</p>
-                                <a title="Fazer Download" href="/ajax/acoes.aspx?acao=donwloadCupons"><img src="../assets/imagens/ico-excel.png" alt="Fazer Download" width="34px"></a>
+                                <a title="Fazer Download" href="/ajax/acoes.aspx?acao=donwloadCupons">
+                                    <img src="../assets/imagens/ico-excel.png" alt="Fazer Download" width="34px"></a>
                             </div>
                         </div>
 
@@ -176,23 +182,9 @@
                 <!-- /.col-lg-4 -->
 
                 <div class="col-lg-6">
-                    <div class="panel panel-default"  style="min-height:430px">
+                    <div class="panel panel-default" style="min-height: 430px">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Cadastros
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="piechart" style="width: 100%; min-height: 341px;"></div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-
-                  <div class="col-lg-6">
-                    <div class="panel panel-default"  style="min-height:430px">
-                        <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Idade
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Idade
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -203,15 +195,51 @@
                     <!-- /.panel -->
                 </div>
 
-                   <div class="col-lg-6">
-                    <div class="panel panel-default"  style="min-height:430px">
+                <div class="col-lg-6">
+                    <div class="panel panel-default" style="min-height: 430px">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Lojas
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Cadastros
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="divLoja" style="width: 100%; min-height: 341px;"></div>
-                           <%-- <center><a href="javascript:void(0);">Ver vendas de todas as lojas</a></center>--%>
+                            <div id="divCadastros" style="width: 100%; min-height: 341px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default" style="min-height: 430px">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Última Atualização
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <a href="javascript:void(0);" class="list-group-item">
+                                    <i class="fa fa-gift fa-fw"></i><strong>Nome da Planilha Importada</strong>
+                                    <span class="pull-right text-muted" id="Span1" runat="server">modelo.csv</span>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item">
+                                    <strong>Data da Importação</strong>
+                                    <span class="pull-right text-muted small" id="Span2" runat="server"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item">
+                                    <strong>Total em Vendas</strong>
+                                    <span class="pull-right text-muted small" id="Span3" runat="server"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item">
+                                    <strong>Clientes Importados</strong>
+                                    <span class="pull-right text-muted small" id="Span4" runat="server"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item">
+                                    <strong>Ticket Médio</strong>
+                                    <span class="pull-right text-muted small" id="Span5" runat="server"></span>
+                                </a>
+                                <%--<a href="javascript:void(0);" class="list-group-item">
+                                    <strong>5º</strong> Prêmio
+                                    <span class="pull-right text-muted small" id="Span6" runat="server"></span>
+                                </a>--%>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -229,9 +257,8 @@
     <!--footer-->
     <besni:footer runat="server" ID="footer" />
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-       
+
         function rangeIdade() {
             ajax2 = ajaxInit();
             ajax2.open("GET", "../ajax/acoes.aspx?acao=rangeIdade&Rand=" + Math.ceil(Math.random() * 100000), true);
@@ -239,15 +266,16 @@
             ajax2.onreadystatechange = function () {
                 if (ajax2.readyState == 4) {
                     if (ajax2.status == 200) {
+                        
                         var arr = ajax2.responseText.split('|');
                         var data = google.visualization.arrayToDataTable([
-                        ['Idade', 'Quantidade'],
-                        ['18 - 24', parseInt(arr[0])],
-                        ['25 - 34', parseInt(arr[1])],
-                        ['35 - 44', parseInt(arr[2])],
-                        ['45 - 54', parseInt(arr[3])],
-                        ['55 - 64', parseInt(arr[4])],
-                        ['65+', parseInt(arr[5])]
+                            ['Idade', 'Quantidade'],
+                            ['18 - 24', parseInt(arr[0])],
+                            ['25 - 34', parseInt(arr[1])],
+                            ['35 - 44', parseInt(arr[2])],
+                            ['45 - 54', parseInt(arr[3])],
+                            ['55 - 64', parseInt(arr[4])],
+                            ['65+', parseInt(arr[5])]
                         ]);
 
                         var options = {
@@ -258,7 +286,7 @@
 
                         chart.draw(data, options);
 
-                        totalPorLoja();
+                        //  totalPorLoja();
                     }
                 }
             }
@@ -274,7 +302,7 @@
                     if (ajax2.status == 200) {
 
                         var arr = ajax2.responseText.split('|');
-                        
+
                         var data = google.visualization.arrayToDataTable([
                             ['Loja', 'Vendas'],
                             [arr[0], parseInt(arr[1])],
@@ -325,7 +353,7 @@
             }
             ajax2.send(null);
         }
-
+        
     </script>
 
 </body>

@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4" style="text-align:center">
-                <img style="margin-top:100px" src="images/logo.png" />
+                <img style="margin-top:100px;width: 350px;" src="images/logo-estrela.png">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Acesso Restrito</h3>

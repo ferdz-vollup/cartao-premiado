@@ -7,7 +7,7 @@
                 <a href="index.aspx"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="usuarios.aspx"><i class="fa fa-user fa-fw"></i> Usuários</a>
+                <a href="clientes.aspx"><i class="fa fa-user fa-fw"></i> Clientes Ativos</a>
             </li>
             <li>
                 <a href="cupons.aspx"><i class="fa fa-table fa-fw"></i> Números da Sorte</a>
@@ -16,7 +16,7 @@
                 <a href="relatorios.aspx"><i class="fa fa-bar-chart-o fa-fw"></i> Relatórios</a>
             </li>
             <li>
-                <a href="cpfs-bloqueados.aspx"><i class="fa fa-wrench fa-fw"></i> CPFs Bloqueados</a>
+                <a href="CPFsBloqueados.aspx"><i class="fa fa-wrench fa-fw"></i> CPFs Bloqueados</a>
             </li>
             <li>
                 <a href="ganhadores.aspx"><i class="fa fa-trophy fa-fw"></i> Ganhadores</a>

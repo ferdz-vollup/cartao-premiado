@@ -49,7 +49,7 @@
     
         function drawChart() {
             ajax2 = ajaxInit();
-            ajax2.open("GET", "../ajax/acoes.aspx?acao=totalSexo&Rand=" + Math.ceil(Math.random() * 100000), true);
+            ajax2.open("GET", "../ajax/acoes.aspx?acao=totalEmail&Rand=" + Math.ceil(Math.random() * 100000), true);
             ajax2.setRequestHeader("Content-Type", "charset=iso-8859-1");
             ajax2.onreadystatechange = function () {
                 if (ajax2.readyState == 4) {
@@ -57,18 +57,18 @@
                         var arr = ajax2.responseText.split('|');
                         var data = google.visualization.arrayToDataTable([
                         ['Sexo', 'Quantidade',  { role: "style" }],
-                        ['Homens', parseInt(arr[0]), '#3366cc'],
-                        ['Mulheres', parseInt(arr[1]), '#dc3912']
+                        ["Sem E-mail", parseInt(arr[0]), "#0011ff"],
+                        ["Com E-mail", parseInt(arr[1]), "#FF0011"]
                         ]);
 
                         var options = {
-                            title: ''
+                            legend: { position: "none" },
                         };
 
-                        var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
+                        var chart = new google.visualization.ColumnChart(document.getElementById('divCadastros'));
 
                         chart.draw(data, options);
-                       // rangeIdade();
+                        rangeIdade();
                        // totalPorLoja();
                     }
                 }

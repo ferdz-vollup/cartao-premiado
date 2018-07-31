@@ -20,7 +20,11 @@ namespace cartaoPremiado.ajax
     {
         bd objBD = new bd();
         utils objUtils = new utils();
-        private OleDbDataReader rsLogin;
+        private OleDbDataReader rsLogin, rsCadastros, rsIdade, rsEmail;
+
+        string retorno = "", retorno2 = "";
+
+        int total = 0, aux = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,6 +40,18 @@ namespace cartaoPremiado.ajax
                     loginAdministrador(Request["email"].ToString(), Request["password"].ToString());
                     break;
 
+                case "filtrarClientes":
+                    filtrarClientes(Request["cpf"]);
+                    break;
+                case "filtrarCuponsPorCPF":
+                    filtrarCuponsPorCPF(Request["cpf"]);
+                    break;
+                case "rangeIdade":
+                    rangeIdade();
+                    break;
+                case "totalEmail":
+                    totalEmail();
+                    break;
                 default:
                     break;
             }
@@ -70,6 +86,121 @@ namespace cartaoPremiado.ajax
 
             rsLogin.Dispose();
             rsLogin.Close();
+        }
+
+        public void filtrarClientes(string cpf)
+        {
+            try
+            {
+                rsCadastros = objBD.ExecutaSQL("select CLI_NOME, CLI_NUMERO_CARTAO, CLI_CPF, count(CLI_CPF) as total from clientes where CLI_CPF LIKE '%" + cpf + "%' group by CLI_NOME, CLI_NUMERO_CARTAO, CLI_CPF");
+
+                if (rsCadastros == null)
+                {
+                    throw new Exception();
+                }
+                if (rsCadastros.HasRows)
+                {
+                    while (rsCadastros.Read())
+                    {
+                        retorno += "<tr>";
+                        retorno += "  <td>" + rsCadastros["CLI_NOME"] + "</td>";
+                        retorno += "  <td>" + rsCadastros["CLI_NUMERO_CARTAO"] + "</td>";
+                        retorno += "  <td>" + rsCadastros["CLI_CPF"] + "</td>";
+                        retorno += "  <td>";
+                        retorno += "    <a href='javascript:void(0)' onClick='verUser(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a> | ";
+                        retorno += "    <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
+                        retorno += "</td>";
+                        retorno += "</tr>";
+
+                        retorno2 = rsCadastros["TOTAL"].ToString();
+                    }
+
+                    Response.Write(retorno + "Ø" + retorno2);
+                    Response.End();
+                }
+                rsCadastros.Dispose();
+                rsCadastros.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void filtrarCuponsPorCPF(string cpf)
+        {
+            try
+            {
+                rsCadastros = objBD.ExecutaSQL("select CLI_NOME, P.CUP_NUMERO_SORTE, P.CUP_VALOR, CLI_CPF, P.CUP_DH_COMPRA, count(CLI_CPF) as TOTAL from clientes C INNER JOIN Cupons P ON (P.CLI_ID = C.CLI_ID) where CLI_CPF LIKE '%" + cpf + "%' group by CLI_NOME, CUP_NUMERO_SORTE, CLI_CPF, CUP_VALOR, CUP_DH_COMPRA");
+
+                if (rsCadastros == null)
+                {
+                    throw new Exception();
+                }
+                if (rsCadastros.HasRows)
+                {
+                    while (rsCadastros.Read())
+                    {
+                        retorno += "<tr>";
+                        retorno += "  <td>" + rsCadastros["CLI_NOME"] + "</td>";
+                        retorno += "  <td>" + rsCadastros["CUP_NUMERO_SORTE"] + "</td>";
+                        retorno += "  <td>" + rsCadastros["CUP_VALOR"] + "</td>";
+                        retorno += "  <td>" + rsCadastros["CUP_DH_COMPRA"] + "</td>";
+                        retorno += "  <td>";
+                        retorno += "    <a href='javascript:void(0)' onClick='verUser(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a> | ";
+                        retorno += "    <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
+                        retorno += "</td>";
+                        retorno += "</tr>";
+
+                        retorno2 = rsCadastros["TOTAL"].ToString();
+                    }
+
+                    Response.Write(retorno + "Ø" + retorno2);
+                    Response.End();
+                }
+                rsCadastros.Dispose();
+                rsCadastros.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void rangeIdade()
+        {
+            rsIdade = objBD.ExecutaSQL("EXEC totalPorIdade");
+            if (rsIdade == null)
+            {
+                throw new Exception();
+            }
+            if (rsIdade.HasRows)
+            {
+                rsIdade.Read();
+                retorno = " " + rsIdade["18"] + "|" + rsIdade["25"] + "|" + rsIdade["35"] + "|" + rsIdade["45"] + "|" + rsIdade["55"] + "|" + rsIdade["65"] + "";
+                Response.Write(retorno);
+                Response.End();
+            }
+            rsIdade.Dispose();
+            rsIdade.Close();
+        }
+
+        public void totalEmail()
+        {
+            rsEmail = objBD.ExecutaSQL("EXEC totalEmail");
+            if (rsEmail == null)
+            {
+                throw new Exception();
+            }
+            if (rsEmail.HasRows)
+            {
+                rsEmail.Read();
+                retorno = " " + rsEmail["SEM_EMAIL"] + "|" + rsEmail["COM_EMAIL"] + "";
+                Response.Write(retorno);
+                Response.End();
+            }
+            rsEmail.Dispose();
+            rsEmail.Close();
         }
 
     }
