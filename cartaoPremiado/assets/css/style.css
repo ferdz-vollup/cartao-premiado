@@ -181,7 +181,7 @@ input.error, textarea.error {border: 1px solid #f00 !important;}
 /* ONDE ESTAMOS */
 #onde-estamos #map {width: 100%;height: 450px;}
 #onde-estamos .cep {width:100%;text-align:center}
-#onde-estamos .btn-buscar {margin-top:-20px;}
+#onde-estamos .btn-buscar {margin-top:-20px;} 
 
 /* RODAPE */
 #como-participar #rodape, #resultados #rodape, #faq #rodape, #fale-conosco #rodape{margin-top:80px;}
