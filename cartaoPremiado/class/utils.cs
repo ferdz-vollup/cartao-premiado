@@ -148,13 +148,13 @@ namespace Etnia.classe
         }
 
 
-        public  bool EnviaEmail(string destinatarios, string assunto, string mensagem, string ComCopia = "", string ComCopiaOculta = "", string[] anexos = null, string remetente = "contatopromo@lojasbesni.com.br", string nome = "Promoção Besni")
+        public  bool EnviaEmail(string destinatarios, string assunto, string mensagem, string ComCopia = "", string ComCopiaOculta = "", string[] anexos = null, string remetente = "no-reply@vollup.com", string nome = "Promoção Besni")
         {
 
             //Cria objeto com dados do e-mail.
             MailMessage objEmail = new MailMessage();
             //Define o Campo From e ReplyTo do e-mail. 
-            objEmail.From = new System.Net.Mail.MailAddress("naoresponda@lojasbesni.com.br", nome);
+            objEmail.From = new System.Net.Mail.MailAddress("no-reply@vollup.com", nome);
             objEmail.ReplyToList.Add(remetente);
             if (string.IsNullOrWhiteSpace(destinatarios) == false)
             {
@@ -270,13 +270,13 @@ namespace Etnia.classe
             //Cria objeto com os dados do SMTP
             System.Net.Mail.SmtpClient objSmtp = new System.Net.Mail.SmtpClient();
             //Alocamos o endereço do host para enviar os e-mails, localhost(recomendado) 
-            objSmtp.Host = "maserati.lojasbesni.com.br";
-            objSmtp.Port = 25;
-            objSmtp.EnableSsl = false;
+            objSmtp.Host = "smtp.gmail.com";
+            objSmtp.Port = 465;
+            objSmtp.EnableSsl = true;
             objSmtp.Timeout = 999999;
 
 
-            objSmtp.Credentials = new System.Net.NetworkCredential("naoresponda@lojasbesni.com.br", "bsn@2015*");
+            objSmtp.Credentials = new System.Net.NetworkCredential("no-reply@vollup.com", "@noreply123");
             try
             {
                 objSmtp.Send(objEmail);

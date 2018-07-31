@@ -168,10 +168,10 @@
                             <div class="xml-btn">
                                 <p>Ganhadores</p>
                                 <a title="Fazer Download" href="/ajax/acoes.aspx?acao=donwloadGanhadores">
-                                    <img src="../assets/imagens/ico-excel.png" alt="Fazer Download" style="margin-right: 10px" width="34px"></a>
+                                    <img src="../assets/images/ico-excel.png" alt="Fazer Download" style="margin-right: 10px" width="34px"></a>
                                 <p>Cupons</p>
                                 <a title="Fazer Download" href="/ajax/acoes.aspx?acao=donwloadCupons">
-                                    <img src="../assets/imagens/ico-excel.png" alt="Fazer Download" width="34px"></a>
+                                    <img src="../assets/images/ico-excel.png" alt="Fazer Download" width="34px"></a>
                             </div>
                         </div>
 

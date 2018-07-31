@@ -70,12 +70,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\Clientes.aspx" />
+    <Content Include="admin\CPFsBloqueados.aspx" />
     <Content Include="admin\css\bootstrap.min.css" />
     <Content Include="admin\css\font-awesome.min.css" />
     <Content Include="admin\css\metisMenu.min.css" />
     <Content Include="admin\css\morris.css" />
     <Content Include="admin\css\sb-admin-2.css" />
     <Content Include="admin\css\style.css" />
+    <Content Include="admin\Cupons.aspx" />
+    <Content Include="admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin\Ganhadores.aspx" />
+    <Content Include="admin\images\logo-estrela.png" />
     <Content Include="admin\images\logo.png" />
     <Content Include="admin\inc\footer.ascx" />
     <Content Include="admin\inc\head.ascx" />
@@ -86,28 +92,53 @@
     <Content Include="admin\js\jquery.min.js" />
     <Content Include="admin\js\metisMenu.min.js" />
     <Content Include="admin\js\sb-admin-2.js" />
+    <Content Include="admin\LerCSV.aspx" />
     <Content Include="admin\login.aspx" />
     <Content Include="ajax\acoes.aspx" />
     <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\responsive.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\images\escrita-vitrine-home.png" />
+    <Content Include="assets\images\estrela-com-moedas.png" />
     <Content Include="assets\images\estrela-vitrine-home.png" />
     <Content Include="assets\images\fundo-premios.jpg" />
+    <Content Include="assets\images\fundo-vermelho-degrade.jpg" />
+    <Content Include="assets\images\ico-excel.png" />
+    <Content Include="assets\images\icone-compras-acima.png" />
+    <Content Include="assets\images\icone-consulte-seus-cupons.png" />
+    <Content Include="assets\images\icone-email.png" />
+    <Content Include="assets\images\icone-facebook.png" />
+    <Content Include="assets\images\icone-fique-de-olho.png" />
+    <Content Include="assets\images\icone-instagram.png" />
+    <Content Include="assets\images\icone-os-premios.png" />
+    <Content Include="assets\images\icone-telefone.png" />
+    <Content Include="assets\images\icone-youtube.png" />
     <Content Include="assets\images\logo-besni.png" />
+    <Content Include="assets\images\logo-rodape.png" />
+    <Content Include="assets\images\mao-cartao-vitrine.png" />
     <Content Include="assets\images\mao-cartao.png" />
+    <Content Include="assets\images\marker-besni.png" />
+    <Content Include="assets\images\moedas-direita-vitrine.png" />
+    <Content Include="assets\images\moedas-esquerda-vitrine.png" />
+    <Content Include="assets\images\mulher-cartao.png" />
     <Content Include="assets\images\tira-vitrine.jpg" />
     <Content Include="assets\images\vitrine-home.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\gmaps.js" />
     <Content Include="assets\js\jquery-3.2.1.min.js" />
     <Content Include="assets\js\mascara.js" />
     <Content Include="assets\js\scripts.js" />
     <Content Include="como-participar.aspx" />
+    <Content Include="fale-conosco.aspx" />
+    <Content Include="faq.aspx" />
     <Content Include="include\footer.ascx" />
     <Content Include="include\head.ascx" />
     <Content Include="include\menu.ascx" />
     <Content Include="include\scripts.ascx" />
+    <Content Include="numero-da-sorte.aspx" />
+    <Content Include="onde-estamos.aspx" />
     <Content Include="packages.config" />
     <Content Include="default.aspx" />
     <Content Include="assets\fonts\baseninesmallcaps-webfont.woff" />
@@ -118,6 +149,21 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\basenine-bold-italic-webfont.woff" />
+    <Content Include="assets\fonts\basenine-bold-italic-webfont.woff2" />
+    <Content Include="assets\fonts\d-dincondensed-bold-webfont.woff" />
+    <Content Include="assets\fonts\d-dincondensed-bold-webfont.woff2" />
+    <Content Include="assets\fonts\d-dincondensed-webfont.ttf" />
+    <Content Include="assets\fonts\d-dincondensed-webfont.woff" />
+    <Content Include="assets\fonts\d-dincondensed-webfont.woff2" />
+    <Content Include="admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,9 +172,39 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resultados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\caixa.cs" />
+    <Compile Include="admin\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CPFsBloqueados.aspx.cs">
+      <DependentUpon>CPFsBloqueados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CPFsBloqueados.aspx.designer.cs">
+      <DependentUpon>CPFsBloqueados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Cupons.aspx.cs">
+      <DependentUpon>Cupons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Cupons.aspx.designer.cs">
+      <DependentUpon>Cupons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Ganhadores.aspx.cs">
+      <DependentUpon>Ganhadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Ganhadores.aspx.designer.cs">
+      <DependentUpon>Ganhadores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\inc\footer.ascx.cs">
       <DependentUpon>footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +240,13 @@
     <Compile Include="admin\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\LerCSV.aspx.cs">
+      <DependentUpon>LerCSV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\LerCSV.aspx.designer.cs">
+      <DependentUpon>LerCSV.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -190,6 +273,20 @@
     </Compile>
     <Compile Include="como-participar.aspx.designer.cs">
       <DependentUpon>como-participar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fale-conosco.aspx.cs">
+      <DependentUpon>fale-conosco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fale-conosco.aspx.designer.cs">
+      <DependentUpon>fale-conosco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
     </Compile>
     <Compile Include="include\footer.ascx.cs">
       <DependentUpon>footer.ascx</DependentUpon>
@@ -219,6 +316,20 @@
     <Compile Include="include\scripts.ascx.designer.cs">
       <DependentUpon>scripts.ascx</DependentUpon>
     </Compile>
+    <Compile Include="numero-da-sorte.aspx.cs">
+      <DependentUpon>numero-da-sorte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="numero-da-sorte.aspx.designer.cs">
+      <DependentUpon>numero-da-sorte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="onde-estamos.aspx.cs">
+      <DependentUpon>onde-estamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="onde-estamos.aspx.designer.cs">
+      <DependentUpon>onde-estamos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -226,6 +337,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="resultados.aspx.cs">
+      <DependentUpon>resultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resultados.aspx.designer.cs">
+      <DependentUpon>resultados.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

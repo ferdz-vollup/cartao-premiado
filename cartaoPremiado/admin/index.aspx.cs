@@ -123,7 +123,7 @@ namespace cartaoPremiado.admin
                     {
                         while (rsGanhadores.Read())
                         {
-                            objBD.ExecutaSQL("EXEC piGanhadoers '" + rsGanhadores["CON_ID"] + "','" + rsGanhadores["CLI_ID"] + "' ");
+                            objBD.ExecutaSQL("EXEC piGanhadoers '" + rsGanhadores["CON_ID"] + "','" + rsGanhadores["CLI_ID"] + "','" + rsGanhadores["CUP_ID"] + "' ");
                         }
                     }
 

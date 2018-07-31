@@ -20,11 +20,11 @@ namespace cartaoPremiado.ajax
     {
         bd objBD = new bd();
         utils objUtils = new utils();
-        private OleDbDataReader rsLogin, rsCadastros, rsIdade, rsEmail;
+        private OleDbDataReader rsLogin, rsCadastros, rsIdade, rsEmail, rs;
 
         string retorno = "", retorno2 = "";
 
-        int total = 0, aux = 0;
+        //int total = 0, aux = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,6 +51,9 @@ namespace cartaoPremiado.ajax
                     break;
                 case "totalEmail":
                     totalEmail();
+                    break;
+                case "donwloadGanhadores":
+                    donwloadGanhadores();
                     break;
                 default:
                     break;
@@ -201,6 +204,296 @@ namespace cartaoPremiado.ajax
             }
             rsEmail.Dispose();
             rsEmail.Close();
+        }
+
+        public void donwloadGanhadores()
+        {
+            {
+                Response.Clear();
+                Response.AddHeader("content-disposition", string.Format("attachment;filename=Ganhadores.xls", "xyz"));
+
+                Response.ContentType = "application/ms-excel";
+                Response.ContentEncoding = System.Text.Encoding.Default;
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append("<style type=\"text/css\">\r\n");
+                sb.Append(".tabHead\r\n");
+                sb.Append("{\r\n");
+                sb.Append("   background-color: #cccccc;\r\n");
+                sb.Append("   border: solid 1px black;\r\n");
+                sb.Append("}\r\n");
+                sb.Append(".tabRow\r\n");
+                sb.Append("{\r\n");
+                sb.Append("   border: solid 1px black;\r\n");
+                sb.Append("}\r\n");
+                sb.Append("</style>\r\n\r\n");
+
+                //SORTEIO E NÚMEROS
+                //Header
+                sb.AppendFormat("<table>\r\n");
+                sb.AppendFormat("<thead>\r\n");
+                sb.AppendFormat("<tr>\r\n");
+                sb.AppendFormat("\t<td colspan='2' class=\"tabHead\">Extração da Loteria Federal</td>\r\n");
+                sb.AppendFormat("</tr>\r\n");
+
+                //sb.AppendFormat("<tr>\r\n");
+                //sb.AppendFormat("\t<td>&nbsp;</td>\r\n");
+                //sb.AppendFormat("\t<td>&nbsp;</td>\r\n");
+                //sb.AppendFormat("\t<td>&nbsp;</td>\r\n");
+                //sb.AppendFormat("\t<td>&nbsp;</td>\r\n");
+                //sb.AppendFormat("\t<td>&nbsp;</td>\r\n");
+                //sb.AppendFormat("\t<td>&nbsp;</td>\r\n");
+                //sb.AppendFormat("\t<td ><img src=\"http://www.promocaobesni.com.br/assets/imagens/logo-rodape.png\" style=\"width:140px; margin-left:35px;\"></td>\r\n");
+                //sb.AppendFormat("</tr>\r\n");
+
+                sb.AppendFormat("</thead>\r\n");
+                sb.AppendFormat("<tbody>\r\n");
+
+                rs = objBD.ExecutaSQL("EXEC psConcursoPremiacao");
+                if (rs == null)
+                {
+                    throw new Exception();
+                }
+
+                if (rs.HasRows)
+                {
+                    rs.Read();
+                    //Row
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='2'>Concurso: " + rs["CON_NUMERO"] + " (" + rs["CON_DATA"] + ")</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='2'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabHead\">Prêmio</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabHead\">Bilhete</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">1º</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BILHETE_1"] + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">2º</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BILHETE_2"] + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">3º</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BILHETE_3"] + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">4º</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BILHETE_4"] + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">5º</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BILHETE_5"] + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='2' class=\"tabHead\">Sorteio Periódico</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">Série</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BESNI"].ToString().Substring(0, 3) + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">Número</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BESNI"].ToString().Substring(2, 5) + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'><b>Apuração da série</b></td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td td colspan='18'>A definição da série participante se dará a partir dos prêmios da Extração da Loteria Federal, lidos de cima para baixo, por meio da combinação das dezenas simples do primeiro ao terceiro prêmio.</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'>Caso o número de série encontrado seja superior à maior série da apuração, deverá ser subtraída a quantidade de séries da apuração, do número de série encontrado, tantas vezes quantas forem necessárias, até que o número obtido esteja dentro do intervalo de séries da apuração. Caso o número de série encontrado seja inferior à menor série da apuração, deverá ser adicionada a quantidade de séries da apuração, do número de série encontrado, tantas vezes quantas forem necessárias, até que o número obtido esteja dentro do intervalo de séries da apuração.</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+                }
+                rs.Close();
+                rs.Dispose();
+
+                //Footer
+                sb.AppendFormat("</tbody>\r\n");
+                sb.AppendFormat("</table>\r\n");
+
+                //QUEBRA DE TABLELA
+                //Row
+                sb.AppendFormat("<tr>\r\n");
+                sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                sb.AppendFormat("</tr>\r\n");
+
+                //GANHADORES
+                //Header
+                sb.AppendFormat("<table>\r\n");
+                sb.AppendFormat("<thead>\r\n");
+                sb.AppendFormat("<tr>\r\n");
+                sb.AppendFormat("\t<td colspan='18' class=\"tabHead\"><b>GANHADORES</b></td>\r\n");
+                sb.AppendFormat("</tr>\r\n");
+                sb.AppendFormat("</thead>\r\n");
+                sb.AppendFormat("<tbody>\r\n");
+
+                //Row
+                sb.AppendFormat("<tr>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Número da Sorte</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">CNPJ da Loja</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Nome</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">CPF</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">RG</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Nascimento</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Sexo</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Telefone</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Celular</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">E-mail</td>\r\n");
+
+                sb.AppendFormat("\t<td class=\"tabRow\">CEP</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Logradouro</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Número</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Complemento</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Bairro</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Cidade</td>\r\n");
+                sb.AppendFormat("\t<td class=\"tabRow\">Estado</td>\r\n");
+
+
+                sb.AppendFormat("\t<td class=\"tabRow\">Imagem do Cupom</td>\r\n");
+                sb.AppendFormat("</tr>\r\n");
+
+                //TIRAR PARAMETRO FIXO
+                //rs = objBD.ExecutaSQL("EXEC Ganhadoresv1 '11832269'");
+
+                //if (rs == null)
+                //{
+                //    throw new Exception();
+                //}
+
+                //if (rs.HasRows)
+                //{
+                //    while (rs.Read())
+                //    {
+                //        sb.AppendFormat("<tr>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CUP_NUMERO_SORTE"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CUP_CNPJ"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td style=\"width: 400px;\">" + rs["CAD_NOME"] + " </td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_CPF"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_RG"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_DATA_NASCIMENTO"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_SEXO"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_TELEFONE"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_CELULAR"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_EMAIL"] + "</td>\r\n");
+
+                //        sb.AppendFormat("\t<td >" + rs["CAD_CEP"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_LOGRADOURO"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_NUMERO"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_COMPLEMENTO"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_BAIRRO"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_CIDADE"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td >" + rs["CAD_ESTADO"] + "</td>\r\n");
+
+                //        sb.AppendFormat("\t<td ><a href='http://promocaobesni.com.br/upload/cupons/usuarios/" + rs["CUP_IMAGEM"] + "'>" + rs["CUP_IMAGEM"] + "</a></td>\r\n");
+                //        sb.AppendFormat("</tr>\r\n");
+
+                //        //INSERIR NA TABELA DE GANHADOERS
+                //        //objBD.ExecutaSQL("insert into ganhadores(CON_ID, CAD_ID, CUP_ID) SELECT '1','" + rs["CAD_ID"] + "','" + rs["CUP_ID"] + "'");
+
+                //    }
+
+                //    sb.AppendFormat("<tr>\r\n");
+                //    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                //    sb.AppendFormat("</tr>\r\n");
+
+                //    sb.AppendFormat("<tr>\r\n");
+                //    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                //    sb.AppendFormat("</tr>\r\n");
+
+                //    rs.Close();
+                //    rs.Dispose();
+                //}
+
+                //Footer
+                sb.AppendFormat("</tbody>\r\n");
+                sb.AppendFormat("</table>\r\n");
+
+                //FIM GANHADORES
+
+                //rs = objBD.ExecutaSQL("select DISTINCT CAD_NOME, CAD_CPF FROM cadastro order by CAD_NOME");
+
+                //if (rs == null)
+                //{
+                //    throw new Exception();
+                //}
+                //if (rs.HasRows)
+                //{
+
+                //    sb.AppendFormat("<table>\r\n");
+                //    sb.AppendFormat("<thead>\r\n");
+                //    sb.AppendFormat("<tr>\r\n");
+                //    sb.AppendFormat("\t<td colspan='2' class=\"tabHead\">Participantes</td>\r\n");
+                //    sb.AppendFormat("</tr>\r\n");
+                //    sb.AppendFormat("</thead>\r\n");
+                //    sb.AppendFormat("<tbody>\r\n");
+
+                //    sb.AppendFormat("<tr>\r\n");
+                //    sb.AppendFormat("\t<td class=\"tabHead\">Nome</td>\r\n");
+                //    sb.AppendFormat("\t<td class=\"tabHead\">CPF</td>\r\n");
+                //    sb.AppendFormat("</tr>\r\n");
+
+                //    while (rs.Read())
+                //    {
+                //        sb.AppendFormat("<tr>\r\n");
+                //        sb.AppendFormat("\t<td class=\"tabRow\">" + rs["CAD_NOME"] + "</td>\r\n");
+                //        sb.AppendFormat("\t<td class=\"tabRow\">" + rs["CAD_CPF"] + "</td>\r\n");
+                //        sb.AppendFormat("</tr>\r\n");
+                //    }
+
+                //    //Footer
+                //    sb.AppendFormat("</tbody>\r\n");
+                //    sb.AppendFormat("</table>\r\n");
+
+                //}
+
+                rs.Close();
+                rs.Dispose();
+                
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.Write(sb.ToString());
+                Response.End();
+
+                // return null;
+            }
         }
 
     }

@@ -17,16 +17,56 @@ namespace cartaoPremiado.admin
     {
         private bd objBD;
         private utils objUtils;
-        private OleDbDataReader rs, rsClientes, rsGanhadores;
+        private OleDbDataReader rs, rsClientes;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             objUtils = new utils();
             objBD = new bd();
+
+            /*INICIO DOS TESTES*/
+            DirectoryInfo dirInfo = new DirectoryInfo(@"e:\home\promocaobesni\web\arquivos");
+
+            BuscaArquivos(dirInfo);
+
+            /*FIM DOS TESTES*/
+
+
+        }
+
+        private void BuscaArquivos(DirectoryInfo dir)
+        {
+            // lista arquivos do diretorio corrente
+            foreach (FileInfo file in dir.GetFiles())
+            {
+
+                ImportarDados(file.Name);
+
+                // aqui no caso estou guardando o nome completo do arquivo em em controle ListBox
+                // voce faz como quiser
+                //lbxResultado.Items.Add(file.FullName);
+                // if (file.Name != "amend_campanhajulho_2_newsmobile_11.07.png")
+                // {
+                //    Response.Write(file.FullName + " | " + file.Name + " | " + file.Extension + "<br/>");
+
+                // string sourceFile = @file.FullName;
+                // string destinationFile = @"e:\home\promocaobesni\web\arquivos\backup\" + file.Name;
+
+                //System.IO.File.Move(sourceFile, destinationFile);
+
+                // }
+            }
+        }
+
+
+        private void ImportarDados(string arquivo)
+        {
+
             string linha = "";
             string[] linhaseparada = null;
-            StreamReader reader = new StreamReader(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos\CAMPANHASORTEIO_0001_20180708_161827.csv", Encoding.UTF8, true);
+
+            // StreamReader reader = new StreamReader(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos\CAMPANHASORTEIO_0001_20180708_161827.csv", Encoding.UTF8, true);
+            StreamReader reader = new StreamReader(@"e:\home\promocaobesni\web\arquivos\" + arquivo + "", Encoding.UTF8, true);
 
             //LIMPAR A TABELA ANTES DE IMPORTAR
             rs = objBD.ExecutaSQL("truncate table DadosImportados");
@@ -49,6 +89,9 @@ namespace cartaoPremiado.admin
 
             }
 
+            reader.Close();
+            // reader.Dispose();
+
             //ENVIAR DADOS IMPORTADO PARA TABELA CLIENTES
             //rsClientes = 
 
@@ -67,10 +110,10 @@ namespace cartaoPremiado.admin
                     //Response.End();
 
 
-                    objBD.ExecutaSQL("EXEC piuClientes '" + rsClientes["DAD_NUMERO_CARTAO"] + "', '" + rsClientes["DAD_NOME_CLIENTE"] + "', '" + rsClientes["DAD_CPF"] + "', '" + rsClientes["DAD_DT_NASCIMENTO"] + "', '" + rsClientes["DAD_VALOR_COMPRA"].ToString().Replace(",", ".") + "','" + rsClientes["DAD_DT_COMPRA"] + "', '"+rsClientes["DAD_NUMERO_SORTE"] +"' ");
+                    objBD.ExecutaSQL("EXEC piuClientes '" + rsClientes["DAD_NUMERO_CARTAO"] + "', '" + rsClientes["DAD_NOME_CLIENTE"] + "', '" + rsClientes["DAD_CPF"] + "', '" + rsClientes["DAD_DT_NASCIMENTO"] + "', '" + rsClientes["DAD_VALOR_COMPRA"].ToString().Replace(",", ".") + "','" + rsClientes["DAD_DT_COMPRA"] + "', '" + rsClientes["DAD_NUMERO_SORTE"] + "' ");
                 }
             }
-
+            
             Response.Redirect("login.aspx");
 
             Response.Write("Finalizado");

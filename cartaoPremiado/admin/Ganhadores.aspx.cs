@@ -113,7 +113,7 @@ namespace cartaoPremiado.admin
 
             objBD.ExecutaSQL("update ganhadores set GAN_STATUS = '" + value + "' WHERE GAN_ID = '" + id + "'");
 
-            rs = objBD.ExecutaSQL("select G.GAN_ID, G.CON_ID, C.CLI_NOME, C.CLI_CPF, p.CUP_NUMERO_SORTE,(select count(*) from Ganhadores where GAN_STATUS in(2)) as TOTAL, GAN_STATUS from Ganhadores G INNER JOIN Clientes c on(c.CLI_ID = g.CLI_ID) INNER JOIN Cupons p on (p.CLI_ID = g.CLI_ID) where GAN_STATUS is null or GAN_STATUS in(2)");
+            rs = objBD.ExecutaSQL("select G.GAN_ID, G.CON_ID, C.CLI_NOME, C.CLI_CPF, (select CUP_NUMERO_SORTE from Cupons where CUP_ID = G.CUP_ID) AS CUP_NUMERO_SORTE,(select count(*) from Ganhadores where GAN_STATUS in(2)) as TOTAL, GAN_STATUS from Ganhadores G INNER JOIN Clientes c on(c.CLI_ID = g.CLI_ID) where GAN_STATUS is null or GAN_STATUS in(2)");
 
             if (rs == null)
             {

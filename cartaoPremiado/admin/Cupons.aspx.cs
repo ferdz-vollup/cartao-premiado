@@ -18,9 +18,9 @@ namespace cartaoPremiado.admin
     {
         private bd objBD;
         private utils objUtils;
-        private OleDbDataReader rsCupons, rsTotal;
-        string resposta = "";
-        int aux = 0, pagina = 1;
+        private OleDbDataReader rsCupons;
+        //string resposta = "";
+        int aux = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -17,9 +17,9 @@ namespace cartaoPremiado.admin
     {
         private bd objBD;
         private utils objUtils;
-        private OleDbDataReader rsCadastros, rsUser, rsTotal;
+        private OleDbDataReader rsCadastros, rsUser;
         string resposta = "";
-        int aux = 0, pagina = 1;
+        int aux = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
