@@ -91,7 +91,7 @@
 
 @media screen and (max-width: 600px) {
     p br {display: none;}
-    h2 {font-size: 25px;line-height: 30px;}
+    h2 {font-size: 35px;line-height: 45px;}
     h3 {font-size: 20px;}
 
     a.navbar-brand {width: 180px;height: 32px;}
