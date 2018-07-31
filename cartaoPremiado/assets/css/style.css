@@ -63,25 +63,6 @@ em a, em a:hover {text-decoration: underline;color: #bd2324;font-weight: 600;}
 .font40 {font-size:40px;line-height:50px;}
 
 
-/* ANIMACOES */
-.animation {opacity: 0;}
-.animation.ready-animation {opacity:1}
-/* SCALE */
-.animation[data-animation="scale"] {transform: scale(0);-webkit-transform: scale(0);-moz-transform: scale(0);-ms-transform: scale(0);-o-transform: scale(0);}
-.ready-animation[data-animation="scale"] {transform: scale(1);-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);}
-/* RIGHT */
-.animation[data-animation="right"] {transform: translateX(120%);-webkit-transform: translateX(120%);-moz-transform: translateX(120%);-ms-transform: translateX(120%);-o-transform: translateX(120%);}
-.ready-animation[data-animation="right"] {transform: translateX(0%);-webkit-transform: translateX(0%);-moz-transform: translateX(0%);-ms-transform: translateX(0%);-o-transform: translateX(0%);}
-/* LEFT */
-.animation[data-animation="left"] {transform: translateX(-120%);-webkit-transform: translateX(-120%);-moz-transform: translateX(-120%);-ms-transform: translateX(-120%);-o-transform: translateX(-120%);}
-.ready-animation[data-animation="left"] {transform: translateX(0%);-webkit-transform: translateX(0%);-moz-transform: translateX(0%);-ms-transform: translateX(0%);-o-transform: translateX(0%);}
-/* BOTTOM */
-.animation[data-animation="bottom"] {transform: translateY(120%);-webkit-transform: translateY(120%);-moz-transform: translateY(120%);-ms-transform: translateY(120%);-o-transform: translateY(120%);}
-.ready-animation[data-animation="bottom"] {transform: translateY(0%);-webkit-transform: translateY(0%);-moz-transform: translateY(0%);-ms-transform: translateY(0%);-o-transform: translateY(0%);}
-/* BOTTOM */
-.animation[data-animation="width"] {max-width:0px;}
-.ready-animation[data-animation="width"] {max-width:800px;}
-
 /* MENU */
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {border: 0px;}
 a.navbar-brand {background-image: url(../images/logo-besni.png);width: 232px;height: 42px;background-size: cover;background-repeat: no-repeat;}
@@ -92,9 +73,8 @@ nav.navbar.navbar-default {box-shadow: none;background-color: transparent;backgr
 section#menu {position: fixed;z-index: 99;width: 100%;background-color: white;top: 0;}
 
 #banner {background-image: url(../images/vitrine-home.jpg);height: 798px;background-repeat: no-repeat;max-height: 80%;background-size: cover;position: relative;margin-top: 110px;margin-bottom: 80px;overflow: hidden;}
-#banner:after {bottom: 0;}
-#banner:not(.sem-tiras):after, #banner:not(.sem-tiras):before {content: ''; background-image: url(../images/tira-vitrine.jpg);height: 19px;width: 100%;display: block;position: absolute;z-index:3}
-#banner .conteudo > div, #banner .container > div {position: absolute;top: 50%;transform: translateY(-50%);max-width: 48%;}
+#banner:after {bottom: 0;top: initial !important;}
+#banner:after, #banner:before {content: ''; background-image: url(../images/tira-vitrine.jpg);height: 19px;width: 100%;display: block;position: absolute;z-index:3;top:0}
 #banner .container {position:relative;height:100%;}
 #banner .estrela-vitrine {left: 0;margin-top: 8px;}
 #banner .estrela-vitrine img {max-height: 100%;}
@@ -147,13 +127,13 @@ section#menu {position: fixed;z-index: 99;width: 100%;background-color: white;to
 #resultados #banner .estrela-vitrine {right: -5%;left: auto;margin-top: 5px;height: 95%;}
 #resultados #banner .container .mulher-vitrine {height: 100%;width: auto;transform: none;top: 0;left: -5%;}
 #resultados #banner .mulher-vitrine img {width: auto;height: 100%;}
-#resultados .ganhadores {width: 300px;max-width: 100%;margin: auto;background-image: url(../images/fundo-vermelho-degrade.jpg);background-size: 100% 100%;padding: 20px 30px;padding-bottom: 30px;color: white;position: relative;}
-#resultados .ganhadores:after {width: calc(100% - 14px);height: calc(100% - 14px);content: '';position: absolute;border: 1px solid yellow;left: 50%;top: 50%;transform: translate(-50%, -50%);}
-#resultados .ganhadores h2 {font-size: 35px;}
-#resultados .ganhadores h3 {font-weight: 500;font-size: 35px;}
-#resultados .ganhadores ul {padding: 0;max-width: 80%;margin: 0px auto;}
-#resultados .ganhadores ul li {list-style: none;text-align: left;padding: 0;margin: 30px 0px;font-family: 'baseninemedium';line-height: 25px;font-size: 20px;}
-#resultados .ganhadores ul li:last-child {margin-bottom:0px;}
+.ganhadores {width: 300px;max-width: 100%;margin: auto;background-image: url(../images/fundo-vermelho-degrade.jpg);background-size: 100% 100%;padding: 20px 30px;padding-bottom: 30px;color: white;position: relative;}
+.ganhadores:after {width: calc(100% - 14px);height: calc(100% - 14px);content: '';position: absolute;border: 1px solid yellow;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+.ganhadores h2 {font-size: 35px;}
+.ganhadores h3 {font-weight: 500;font-size: 35px;}
+.ganhadores ul {padding: 0;max-width: 80%;margin: 0px auto;}
+.ganhadores ul li {list-style: none;text-align: left;padding: 0;margin: 30px 0px;font-family: 'baseninemedium';line-height: 25px;font-size: 20px;}
+.ganhadores ul li:last-child {margin-bottom:0px;}
 
 /* FAQ */
 #faq #banner {height:430px;max-height: 50%;}
@@ -183,8 +163,16 @@ input.error, textarea.error {border: 1px solid #f00 !important;}
 #onde-estamos .cep {width:100%;text-align:center}
 #onde-estamos .btn-buscar {margin-top:-20px;} 
 
+/* NUMERO DA SORTE */
+#numero-da-sorte #banner {height:150px;overflow: visible;margin-top: 350px;}
+#numero-da-sorte #banner .mao-cartao {bottom: 0;top: initial !important;transform: none !important;height: 260%;}
+#numero-da-sorte #banner .mao-cartao img {height: 100%;max-width: none;}
+#numero-da-sorte #banner .estrela-vitrine {right: 0;left: initial !important;max-width: 20em;}
+#numero-da-sorte .cpf {width:100%;}
+#numero-da-sorte .ganhadores ul li {text-align:center;}
+
 /* RODAPE */
-#como-participar #rodape, #resultados #rodape, #faq #rodape, #fale-conosco #rodape{margin-top:80px;}
+#como-participar #rodape, #resultados #rodape, #faq #rodape, #fale-conosco #rodape, #numero-da-sorte #rodape{margin-top:80px;}
 #rodape {padding: 50px 0px;background-color: #f6f6f6;}
 #rodape .container > div {margin: 0px 50px}
 #rodape span {font-size: 12px;line-height: 18px;padding-right: 50px;display: block;}

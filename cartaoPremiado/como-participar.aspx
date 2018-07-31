@@ -45,10 +45,10 @@
                     <h3 class="basenine text-uppercase cinza">compras acima de r$250</h3>
                     <div class="traco-vermelho"></div>
                     <div class="row">
-					    <div class="col-md-3 col-xs-3 text-center">
+					    <div class="col-md-3 col-xs-12 text-center col-sm-3">
 						    <img src="/assets/images/icone-compras-acima.png" alt="Ícone compras">
 					    </div>
-					    <div class="col-md-9 col-xs-9">
+					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
 							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						    </span>
@@ -59,10 +59,10 @@
                     <h3 class="basenine text-uppercase cinza">Consulte seus Cupons no Site</h3>
                     <div class="traco-vermelho"></div>
                     <div class="row">
-					    <div class="col-md-3 col-xs-3 text-center">
+					    <div class="col-md-3 col-xs-12 text-center col-sm-3">
 						    <img src="/assets/images/icone-consulte-seus-cupons.png" alt="Ícone compras">
 					    </div>
-					    <div class="col-md-9 col-xs-9">
+					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
 							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						    </span>
@@ -76,10 +76,10 @@
                     <h3 class="basenine text-uppercase cinza">fique de olho no sorteio</h3>
                     <div class="traco-vermelho"></div>
                     <div class="row">
-					    <div class="col-md-3 col-xs-3 text-center">
+					    <div class="col-md-3 col-xs-12 text-center col-sm-3">
 						    <img src="/assets/images/icone-fique-de-olho.png" alt="Ícone compras">
 					    </div>
-					    <div class="col-md-9 col-xs-9">
+					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
 							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						    </span>
@@ -90,10 +90,10 @@
                     <h3 class="basenine text-uppercase cinza">os prêmios</h3>
                     <div class="traco-vermelho"></div>
                     <div class="row">
-					    <div class="col-md-3 col-xs-3 text-center">
+					    <div class="col-md-3 col-xs-12 text-center col-sm-3">
 						    <img src="/assets/images/icone-os-premios.png" alt="Ícone compras">
 					    </div>
-					    <div class="col-md-9 col-xs-9">
+					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
 							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						    </span>

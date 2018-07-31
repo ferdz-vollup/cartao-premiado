@@ -25,6 +25,9 @@
             <div class="cartao-vitrine">
                 <img class="animation" data-animation="left" data-time="1200" src="assets/images/mao-cartao-vitrine.png" alt="">
             </div>
+            <div class="estrela-vitrine visible-xs">
+                <img class="animation" data-animation="scale" data-time="1200" src="assets/images/estrela-vitrine-home.png" alt="">
+            </div>
             <div class="moedas moedas-vitrine-direita">
                 <img class="animation" data-animation="width" data-time="1800" data-delay="500" src="assets/images/moedas-direita-vitrine.png" alt="">
             </div>

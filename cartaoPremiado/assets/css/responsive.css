@@ -1,5 +1,130 @@
 @media screen and (min-width: 1000px) {
+    /* ANIMACOES */
+    .animation {opacity: 0;}
+    .animation.ready-animation {opacity:1}
+    /* SCALE */
+    .animation[data-animation="scale"] {transform: scale(0);-webkit-transform: scale(0);-moz-transform: scale(0);-ms-transform: scale(0);-o-transform: scale(0);}
+    .ready-animation[data-animation="scale"] {transform: scale(1);-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);}
+    /* RIGHT */
+    .animation[data-animation="right"] {transform: translateX(120%);-webkit-transform: translateX(120%);-moz-transform: translateX(120%);-ms-transform: translateX(120%);-o-transform: translateX(120%);}
+    .ready-animation[data-animation="right"] {transform: translateX(0%);-webkit-transform: translateX(0%);-moz-transform: translateX(0%);-ms-transform: translateX(0%);-o-transform: translateX(0%);}
+    /* LEFT */
+    .animation[data-animation="left"] {transform: translateX(-120%);-webkit-transform: translateX(-120%);-moz-transform: translateX(-120%);-ms-transform: translateX(-120%);-o-transform: translateX(-120%);}
+    .ready-animation[data-animation="left"] {transform: translateX(0%);-webkit-transform: translateX(0%);-moz-transform: translateX(0%);-ms-transform: translateX(0%);-o-transform: translateX(0%);}
+    /* BOTTOM */
+    .animation[data-animation="bottom"] {transform: translateY(120%);-webkit-transform: translateY(120%);-moz-transform: translateY(120%);-ms-transform: translateY(120%);-o-transform: translateY(120%);}
+    .ready-animation[data-animation="bottom"] {transform: translateY(0%);-webkit-transform: translateY(0%);-moz-transform: translateY(0%);-ms-transform: translateY(0%);-o-transform: translateY(0%);}
+    /* BOTTOM */
+    .animation[data-animation="width"] {max-width:0px;}
+    .ready-animation[data-animation="width"] {max-width:800px;}
+
+
     /* COMO PARTICIPAR */
     #como-participar #topicos .container > .row > .col-md-6 {padding-right: 40px;}
     #como-participar #topicos .container > .row > .col-md-6:last-child {padding-right: 15px;padding-left: 40px;}
+}
+
+@media screen and (min-width: 768px) {
+    #banner .conteudo > div, #banner .container > div {position: absolute;top: 50%;transform: translateY(-50%);max-width: 48%;}
+    #banner.sem-tiras:after, #banner.sem-tiras:before {background-image:none;}
+}
+
+@media screen and (min-width: 700px) and (max-width: 768px) {
+    .navbar-header {padding-bottom: 10px;}
+    .navbar-toggle {margin-bottom: 0px;margin-top: 5px !important;}
+    #banner {height: 38%;margin-top: 104px;}
+}
+
+@media screen and (max-width: 768px) {
+    h2 br, h3 br, span br {display: none;}
+    
+    /* TOPO */
+    .navbar-nav > li {float: none !important;}
+    .navbar-right {float: none !important;margin-right: inherit !important;}
+    .navbar-nav {float: none !important;margin: inherit !important;}
+    .navbar-collapse.collapse {display: none !important;height: inherit;padding-bottom: inherit;box-shadow: inset 0 1px 0 rgba(255,255,255,.1);}
+    .navbar-collapse.collapse.in {display: block !important;}
+    .navbar-header {float: none;}
+    .navbar-toggle {display: block;margin-top: 0px;background-color: transparent;border: 0px;margin-right: 0px;}
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: transparent}
+    nav.navbar.navbar-default {padding: 30px 0px 22px;}
+
+    #banner.banner-estrela {height:330px;}
+    #banner.banner-estrela .estrela-vitrine {max-width: 50%;}
+
+    /* HOME */
+    #home #tarja-cartao {height:250px;}
+    #home #tarja-cartao .cartao-besni {display:none}
+    #home #tarja-cartao .escrita {text-align:center;}
+    #home #premiacao .fundo-cinza {background-image: none; background-color:#f6f6f6}
+
+    /* COMO PARTICIPAR */
+    #banner .conteudo > div, #banner .container > div {max-width: 70%;}
+    #como-participar #banner .conteudo .moedas {top: 17%;}
+    #como-participar #banner .estrela-vitrine {max-width:none;}
+    #como-participar #topicos .container > .row .col-md-6:last-child {margin-top:80px}
+
+    /* NUMERO DA SORTE */
+    #numero-da-sorte #banner {height: 110px;margin-top: 205px;}
+    #numero-da-sorte #banner .mao-cartao {height: 190%;}
+    #numero-da-sorte #banner .estrela-vitrine {max-width: 15em;}
+
+    /* RESULTADOS */
+    #resultados #banner {height:330px;}
+    #resultados #banner .container .mulher-vitrine {left:0;}
+    #resultados #banner .estrela-vitrine {right:2%;}
+
+    /* FAQ */
+    #faq #banner {height:330px;}
+    #faq #banner .cartao-vitrine {margin-left:-30%;}
+    #faq #banner .moedas.moedas-vitrine-direita {width:100%;left: 58%;}
+
+    /* FALE CONOSCO */
+    #fale-conosco form {width:100%;}
+
+    /* RODAPE */
+    #rodape .container > div {margin: 0px 0px}
+    #rodape span {padding-right: 0px;}
+    #rodape .col-md-3 {margin-top: 30px;}
+}
+
+
+@media screen and (max-width: 600px) {
+    p br {display: none;}
+    h2 {font-size: 25px;line-height: 30px;}
+    h3 {font-size: 20px;}
+
+    a.navbar-brand {width: 180px;height: 32px;}
+
+    #banner {padding: 50px 0px;height:auto !important;max-height: none !important;margin-top:92px !important;}
+    #banner .conteudo > div, #banner .container > div {max-width:100%;}
+    #banner .estrela-vitrine {margin-top: 0px !important;max-width: 100% !important;transform: none !important;}
+
+    /* HOME */
+    #home #premiacao .fundo-cinza {height:auto;}
+    #home #premiacao .fundo-cinza p.txt {margin-top:0px;}
+    #home #premiacao .fundo-cinza > em {position: initial;margin-top: 30px;display: block;}
+    #home #instagram h3 {font-size:24px;}
+
+    /* COMO PARTICIPAR */
+    #como-participar #banner .conteudo {padding:0px 15px;}
+    #como-participar #banner .conteudo .moedas {display:none;}
+    #como-participar #banner .estrela-vitrine {max-width: 100%;transform: none;margin-top: 0px;}
+    #como-participar #topicos .container > .row .col-md-3 {margin-bottom:25px;}
+
+    /* NUMERO DA SORTE */
+    #numero-da-sorte #banner .mao-cartao {display:none;}
+    #numero-da-sorte .cpf {margin:0px;}
+
+    /* RESULTADOS */
+    #resultados #banner .container .mulher-vitrine {display:none;}
+
+    /* FAQ */
+    #faq #banner .cartao-vitrine, #faq #banner .moedas {display:none;}
+
+    /* FALE CONOSCO */
+    input, textarea {margin:0px;margin-bottom:10px;}
+    #fale-conosco form input, #fale-conosco form textarea {width:100% !important;}
+    #fale-conosco #formFaleConosco button.btn-enviar {margin-right:0px;}
+    #fale-conosco .retorno-mensagem {width:100%;margin-left:0px;margin-top:15px;float:none;clear: both;margin-top: 70px;}
 }
