@@ -47,6 +47,8 @@
                 <div style="width: 530px; max-width: 100%; margin: auto;">
                     <input type="text" name="cpf" id="cpf" value="" class="cpf" placeholder="CPF" />
                     <input type="text" name="nascimento" id="nascimento" value="" class="nascimento" placeholder="DATA DE NASCIMENTO" />
+
+                     <p id="msg1"></p>
                 </div>
                 <hr />
                 <button class="button-normal btn-buscar">Buscar</button>
@@ -58,7 +60,7 @@
             <section id="secEmail" runat="server" style="display: none">
 
                 <div class="traco-vermelho center"></div>
-                <form action="javascript:void(0)" method="post" id="formEmail">
+                <form action="javascript:atualizaEmail($('#cpf').val(), $('#email').val());" method="post" id="formEmail">
                     <p style="width: 1000px; margin: auto; max-width: 100%;">
                         Deseja receber os seus cupons por e-mail?
                     </p>
@@ -119,14 +121,19 @@
                     if (ajax2.readyState == 4) {
                         if (ajax2.status == 200) {
 
-
-                            jQuery("#divGanhadores").html(ajax2.responseText);
-                            $('#secEmail').show();
-                            $('html,body').animate({
-                                scrollTop: $("#nascimento").offset().top
-                            }, 'slow');
-                            $('#cpf').attr("readonly", "readonly");
-                            $('#nascimento').attr("readonly", "readonly");
+                            if (ajax2.responseText == "vazio")
+                            {
+                                jQuery("#msg1").html("Dados não localizados no sistema! </br> Por favor, verique se estão corretos.")
+                            }
+                            else {
+                                jQuery("#divGanhadores").html(ajax2.responseText);
+                                $('#secEmail').show();
+                                $('html,body').animate({
+                                    scrollTop: $("#nascimento").offset().top
+                                }, 'slow');
+                                $('#cpf').attr("readonly", "readonly");
+                                $('#nascimento').attr("readonly", "readonly");
+                            }
                         }
                     }
                 }
@@ -134,7 +141,7 @@
             }
         }
 
-        function atualizaEmail(email, cpf) {
+        function atualizaEmail(cpf, email) {
 
             if (email != "")
 
