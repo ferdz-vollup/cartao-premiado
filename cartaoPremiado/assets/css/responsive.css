@@ -24,6 +24,13 @@
     #como-participar #topicos .container > .row > .col-md-6:last-child {padding-right: 15px;padding-left: 40px;}
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1400px){
+    
+    /* HOME */
+    #home #tarja-cartao {max-height:40%;}
+    #home #tarja-cartao .escrita h2 {font-size: 35px;line-height: 45px;}
+}
+
 @media screen and (min-width: 768px) {
     #banner .conteudo > div, #banner .container > div {position: absolute;top: 50%;transform: translateY(-50%);max-width: 48%;}
     #banner.sem-tiras:after, #banner.sem-tiras:before {background-image:none;}
@@ -101,10 +108,12 @@
     #banner .estrela-vitrine {margin-top: 0px !important;max-width: 100% !important;transform: none !important;}
 
     /* HOME */
+    #home #tarja-cartao {height:auto;padding:30px 0px;}
+    #home #tarja-cartao .escrita {position:initial !important;transform:none;}
     #home #premiacao .fundo-cinza {height:auto;}
     #home #premiacao .fundo-cinza p.txt {margin-top:0px;}
     #home #premiacao .fundo-cinza > em {position: initial;margin-top: 30px;display: block;}
-    #home #instagram h3 {font-size:24px;}
+    #home #instagram h3 {font-size:23px;}
 
     /* COMO PARTICIPAR */
     #como-participar #banner .conteudo {padding:0px 15px;}

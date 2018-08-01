@@ -54,7 +54,7 @@
             </div>
             <div class="escrita">
                 <h2 class="din text-uppercase font40 animation" style="letter-spacing: 3px;" data-animation="right" data-time="1200">
-                    Agora tem mais um motivo pra você <br /><strong>amar o seu cartão besni</strong>
+                    Agora tem mais um motivo para você <br /><strong>amar o seu cartão besni</strong>
                 </h2>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     </h3>
                     <div class="traco-vermelho"></div>
                     <p class="txt">
-                        Todos os vales-presentes serão <strong>entregues em um cartão Besni</strong>, válidos para utilização em qualquer uma de nossas lojas.
+                        Todos os vales-presente serão <strong>entregues em um cartão Besni</strong>, válidos para utilização em qualquer uma de nossas lojas.
                     </p>
                     <em><a href="/como-participar.aspx">saiba mais</a></em>
                 </div>

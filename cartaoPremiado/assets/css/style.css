@@ -20,7 +20,7 @@ button.button-normal:hover a {color:white;}
 
 /* FONTES */
 h1, h2, h3, h4, h5, h6 {margin: 0px;}
-h2 {line-height:50px;font-size:40px;}
+h2 {line-height:55px;font-size:40px;}
 em a, em a:hover {text-decoration: underline;color: #bd2324;font-weight: 600;}
 @font-face {
     font-family: 'baseninemedium';
