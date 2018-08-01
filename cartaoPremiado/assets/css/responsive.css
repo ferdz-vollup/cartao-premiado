@@ -29,6 +29,10 @@
     /* HOME */
     #home #tarja-cartao {max-height:40%;}
     #home #tarja-cartao .escrita h2 {font-size: 35px;line-height: 45px;}
+
+    /* RESULTADOS */
+    #resultados #banner .container .mulher-vitrine {left:10%;}
+    #resultados #banner .estrela-vitrine {right:10%;}
 }
 
 @media screen and (min-width: 768px) {
