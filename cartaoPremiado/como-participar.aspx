@@ -37,12 +37,12 @@
     <section id="topicos">
         <div class="container">
             <h2 class="basenine degrade-vermelho text-center" style="width: 600px;max-width: 100%;margin:auto">
-                “Cartão Da Sorte Besni” veja como participar!
+                “Cartão Da Sorte Besni” saiba como participar!
             </h2>
 
             <div class="row">
                 <div class="col-md-6">
-                    <h3 class="basenine text-uppercase cinza">compras acima de r$250,00</h3>
+                    <h3 class="basenine text-uppercase cinza">compras com cartão Besni acima de r$250,00</h3>
                     <div class="traco-vermelho"></div>
                     <div class="row">
 					    <div class="col-md-3 col-xs-12 text-center col-sm-3">
@@ -64,7 +64,7 @@
 					    </div>
 					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
-							    Os participantes poderão também consultar seus números da sorte no site <a href="javascript:void(0);" title="Promoção Cartão da Sorte">www.promocaobesnicartaodasorte.com.br</a>, por meio do CPF do titular do cartão, no prazo de 72h (setenta e duas horas) após a compra.
+							    Os participantes poderão também consultar seus números da sorte no site www.promocaobesnicartaodasorte.com.br, por meio do CPF do titular do cartão, no prazo de 72h (setenta e duas horas) após a compra.
 						    </span>
 					    </div>
 				    </div>
