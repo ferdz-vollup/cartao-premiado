@@ -124,8 +124,8 @@ section#menu {position: fixed;z-index: 99;width: 100%;background-color: white;to
 
 /* RESULTADOS */
 #resultados #banner {height:430px;max-height: 50%;}
-#resultados #banner .estrela-vitrine {right: -5%;left: auto;margin-top: 5px;height: 95%;}
-#resultados #banner .container .mulher-vitrine {height: 100%;width: auto;transform: none;top: 0;left: -5%;}
+#resultados #banner .estrela-vitrine {right: 0;left: auto;margin-top: 5px;height: 95%;}
+#resultados #banner .container .mulher-vitrine {height: 100%;width: auto;transform: none;top: 0;left: 0;}
 #resultados #banner .mulher-vitrine img {width: auto;height: 100%;}
 .ganhadores {width: 300px;max-width: 100%;margin: auto;background-image: url(../images/fundo-vermelho-degrade.jpg);background-size: 100% 100%;padding: 20px 30px;padding-bottom: 30px;color: white;position: relative;}
 .ganhadores:after {width: calc(100% - 14px);height: calc(100% - 14px);content: '';position: absolute;border: 1px solid yellow;left: 50%;top: 50%;transform: translate(-50%, -50%);}

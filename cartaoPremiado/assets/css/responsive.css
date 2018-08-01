@@ -113,6 +113,7 @@
     #home #premiacao .fundo-cinza {height:auto;}
     #home #premiacao .fundo-cinza p.txt {margin-top:0px;}
     #home #premiacao .fundo-cinza > em {position: initial;margin-top: 30px;display: block;}
+    #home #premiacao .fundo-cinza h3.basenine em {font-family: 'baseninebold';font-style:normal !important;font-size:25px}
     #home #instagram h3 {font-size:23px;}
 
     /* COMO PARTICIPAR */
