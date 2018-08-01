@@ -50,7 +50,7 @@
                 <input type="email" name="email" placeholder="E-MAIL" class="email inputs"/>
                 <textarea name="mensagem" placeholder="DIGITE SUA MENSAGEM" class="inputs"></textarea>
                 <button type="button" class="btn-enviar button-normal">Enviar</button>
-                <button type="button" class="btn-limpar button-normal">Limpar</button>
+                <button type="button" class="btn-limpar button-normal" onclick="javascript:document.getElementById('formFaleConosco').reset();">Limpar</button>
                 <div class="retorno-mensagem"></div>
             </form>
         </div>
