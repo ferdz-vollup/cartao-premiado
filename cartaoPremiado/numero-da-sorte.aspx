@@ -45,11 +45,8 @@
             <div class="traco-vermelho center"></div>
             <form action="javascript:buscarCupons($('#cpf').val(), $('#nascimento').val());" method="post" id="formNumeroSorte">
                 <div style="width: 530px; max-width: 100%; margin: auto;">
-
-                    <%--<input type="text" name="nome" placeholder="NOME" class="nome inputs" />--%>
                     <input type="text" name="cpf" id="cpf" value="" class="cpf" placeholder="CPF" />
                     <input type="text" name="nascimento" id="nascimento" value="" class="nascimento" placeholder="DATA DE NASCIMENTO" />
-
                 </div>
                 <hr />
                 <button class="button-normal btn-buscar">Buscar</button>
@@ -61,7 +58,7 @@
             <section id="secEmail" runat="server" style="display: none">
 
                 <div class="traco-vermelho center"></div>
-                <form action="javascript:atualizaEmail($('#email').val(), $('#cpf').val());" method="post" id="formEmail">
+                <form action="javascript:void(0)" method="post" id="formEmail">
                     <p style="width: 1000px; margin: auto; max-width: 100%;">
                         Deseja receber os seus cupons por e-mail?
                     </p>
@@ -109,28 +106,32 @@
         }
 
         function buscarCupons(cpf, nascimento) {
+            if ($(".nascimento").hasClass("error")) {
+                alert("Data de nascimento inválida!");
+                return;
+            }
 
-            if (cpf != "")
-
+            if (cpf != "") {
                 ajax2 = ajaxInit();
-            ajax2.open("GET", "/ajax/acoes.aspx?acao=buscarCupons&cpf=" + cpf + "&nascimento=" + nascimento + "&email=" + email, true);
-            ajax2.setRequestHeader("Content-Type", "charset=iso-8859-1");
-            ajax2.onreadystatechange = function () {
-                if (ajax2.readyState == 4) {
-                    if (ajax2.status == 200) {
+                ajax2.open("GET", "/ajax/acoes.aspx?acao=buscarCupons&cpf=" + cpf + "&nascimento=" + nascimento + "&email=" + email, true);
+                ajax2.setRequestHeader("Content-Type", "charset=iso-8859-1");
+                ajax2.onreadystatechange = function () {
+                    if (ajax2.readyState == 4) {
+                        if (ajax2.status == 200) {
 
 
-                        jQuery("#divGanhadores").html(ajax2.responseText);
-                        $('#secEmail').show();
-                        $('html,body').animate({
-                            scrollTop: $("#nascimento").offset().top
-                        }, 'slow');
-                        $('#cpf').attr("readonly", "readonly"); 
-                        $('#nascimento').attr("readonly", "readonly"); 
+                            jQuery("#divGanhadores").html(ajax2.responseText);
+                            $('#secEmail').show();
+                            $('html,body').animate({
+                                scrollTop: $("#nascimento").offset().top
+                            }, 'slow');
+                            $('#cpf').attr("readonly", "readonly");
+                            $('#nascimento').attr("readonly", "readonly");
+                        }
                     }
                 }
+                ajax2.send(null);
             }
-            ajax2.send(null);
         }
 
         function atualizaEmail(email, cpf) {

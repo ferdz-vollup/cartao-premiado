@@ -13,6 +13,19 @@ jQuery(document).ready(function ($) {
     $('.telefone').mask(SPMaskBehavior, spOptions);
     $(".cpf").mask("999.999.999-99");
     $(".cep").mask("99999-999");
+    $('.nascimento').mask('99/99/9999');
+    var regexDate = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/i;
+    $(".nascimento").blur(function () {
+        var data = $(this).val();
+        if (regexDate.test(data) == true) {
+            $(".nascimento").removeClass("error");
+            console.log("no err");
+        } else {
+            $(".nascimento").addClass("error");
+            console.log("err");
+        }
+    });
+    
 
     //INSTA
     if ($('#divInstagram').length > 0 && $(window).width() < 481) {

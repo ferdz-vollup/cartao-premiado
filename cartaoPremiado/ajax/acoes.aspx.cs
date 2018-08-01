@@ -85,7 +85,7 @@ namespace cartaoPremiado.ajax
                 retorno += "<h2 class=\"basenine text-uppercase\">Cupons</h2>";
                 retorno += "<div class=\"traco-branco center\"></div>";
 
-                // <ul>
+                retorno += "<ul>";
 
                 while (rs.Read())
                 {

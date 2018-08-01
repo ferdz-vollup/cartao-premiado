@@ -168,8 +168,12 @@ input.error, textarea.error {border: 1px solid #f00 !important;}
 #numero-da-sorte #banner .mao-cartao {bottom: 0;top: initial !important;transform: none !important;height: 260%;}
 #numero-da-sorte #banner .mao-cartao img {height: 100%;max-width: none;}
 #numero-da-sorte #banner .estrela-vitrine {right: 0;left: initial !important;max-width: 20em;}
-#numero-da-sorte .cpf {width:100%;}
+#numero-da-sorte .cpf {width:400px;max-width:100%;}
+#numero-da-sorte input {text-align:center;}
 #numero-da-sorte .ganhadores ul li {text-align:center;}
+#numero-da-sorte input:not(.cpf) {width:300px;max-width:100%;}
+#numero-da-sorte button.button-normal.btn-buscar {margin-top: 20px;}
+#numero-da-sorte .email {margin-top:20px;}
 
 /* RODAPE */
 #como-participar #rodape, #resultados #rodape, #faq #rodape, #fale-conosco #rodape, #numero-da-sorte #rodape{margin-top:80px;}
