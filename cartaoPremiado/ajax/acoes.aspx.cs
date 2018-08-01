@@ -89,6 +89,12 @@ namespace cartaoPremiado.ajax
 
                 while (rs.Read())
                 {
+                    if(rs["CUP_NUMERO_SORTE"].ToString() =="vazio")
+                    {
+                        Response.Write("vazio");
+                        Response.End();
+                    }
+
                     retorno += "<li>cód. " + rs["CUP_NUMERO_SORTE"] +"</li>";
                 }
                 retorno += "</ul>";
