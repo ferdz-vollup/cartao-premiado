@@ -34,9 +34,11 @@ namespace cartaoPremiado.ajax
             switch (acao)
             {
                 //SITE
-
                 case "buscarCupons":
-                    buscarCupons(Request["cpf"].ToString(), Request["nascimento"].ToString(), Request["email"].ToString());
+                    buscarCupons(Request["cpf"].ToString(), Request["nascimento"].ToString());
+                    break;
+                case "atualizaEmail":
+                    atualizaEmail(Request["cpf"].ToString(), Request["email"].ToString());
                     break;
 
                 //ADMINISTRACAO
@@ -68,9 +70,9 @@ namespace cartaoPremiado.ajax
         }
 
         //SITE
-        public void buscarCupons(string cpf, string nascimento, string email)
+        public void buscarCupons(string cpf, string nascimento)
         {
-            rs = objBD.ExecutaSQL("EXEC psuCuponsPorCPF '" + cpf.Replace(".","").Replace("-", "") + "','" + nascimento + "', '" + email + "'");
+            rs = objBD.ExecutaSQL("EXEC psuCuponsPorCPF '" + cpf.Replace(".","").Replace("-", "") + "','" + nascimento + "'");
 
             if (rs == null)
             {
@@ -98,6 +100,16 @@ namespace cartaoPremiado.ajax
             }
             rs.Close();
             rs.Dispose();
+        }
+
+        public void atualizaEmail(string cpf, string email)
+        {
+
+            objBD.ExecutaSQL("EXEC puClienteEmail '" + cpf.Replace(".", "").Replace("-", "") + "','" + email + "'");
+
+            Response.Write("Seu e-mail foi registrado e em breve receberá uma cópia de seus números da sorte!");
+            Response.End();
+
         }
 
         //ADMINISTRACAO

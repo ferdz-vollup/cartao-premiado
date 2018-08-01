@@ -44,11 +44,16 @@
                 <a href="#">Clique aqui e veja o regulamento</a>
             </button>
             <hr />
-            <h3 class="basenine">Proin gravida nibh vel velit auctor aliquet. Aenean souam?</h3>
-            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
+            <h3 class="basenine">Qual o período da promoção?</h3>
+            <p>01/08/2018 a 04/01/2019</p>
             <hr />
-            <h3 class="basenine">Proin gravida nibh vel velit auctor aliquet. Aenean souam?</h3>
-            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
+            <h3 class="basenine">Qual o período válido de compras para participar da promoção?</h3>
+            <p>
+                <asp:Table></asp:Table>
+                    <asp:TableHeaderRow>Período da Compra</asp:TableHeaderRow>
+                    <asp:TableHeaderRow>Sorteio</asp:TableHeaderRow>
+                </:Table>
+            </p>
             <hr />
             <h3 class="basenine">Proin gravida nibh vel velit auctor aliquet. Aenean souam?</h3>
             <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>

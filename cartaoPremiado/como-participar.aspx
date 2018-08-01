@@ -37,12 +37,12 @@
     <section id="topicos">
         <div class="container">
             <h2 class="basenine degrade-vermelho text-center" style="width: 600px;max-width: 100%;margin:auto">
-                “Cartão Da Sorte Besni” veja como participar
+                “Cartão Da Sorte Besni” veja como participar!
             </h2>
 
             <div class="row">
                 <div class="col-md-6">
-                    <h3 class="basenine text-uppercase cinza">compras acima de r$250</h3>
+                    <h3 class="basenine text-uppercase cinza">compras acima de r$250,00</h3>
                     <div class="traco-vermelho"></div>
                     <div class="row">
 					    <div class="col-md-3 col-xs-12 text-center col-sm-3">
@@ -50,7 +50,7 @@
 					    </div>
 					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
-							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							    Ao efetuar uma compra de, no mínimo, R$ 250,00 (duzentos e cinquenta reais) com seu cartão de crédito Besni em qualquer loja Besni durante o período de participação da promoção, você receberá 01 (um) cupom para concorrer aos prêmios desta promoção. A cada R$250,00 em compras, o participante ganhará 01 (um) número da sorte. Assim, exemplificativamente, uma compra de R$ 600,00 (seiscentos reais) garantirá ao participante 02 (dois) números da sorte, para concorrer.
 						    </span>
 					    </div>
 				    </div>
@@ -64,7 +64,7 @@
 					    </div>
 					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
-							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							    Os participantes poderão também consultar seus números da sorte no site <a href="javascript:void(0);" title="Promoção Cartão da Sorte">www.promocaobesnicartaodasorte.com.br</a>, por meio do CPF do titular do cartão, no prazo de 72h (setenta e duas horas) após a compra.
 						    </span>
 					    </div>
 				    </div>
@@ -81,7 +81,7 @@
 					    </div>
 					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
-							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							    Serão 05 (cinco) datas de sorteio ao longo da promoção, de acordo com os resultados da extração da Loteria Federal do Brasil dos dias 01/09/2018; 06/10/2018; 03/11/2018; 01/12/2018; e 05/01/2018.
 						    </span>
 					    </div>
 				    </div>
@@ -95,7 +95,7 @@
 					    </div>
 					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
-							    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							    Serão 500 (quinhentos) vales-presente no valor de R$100,00 (cem reais) e 03 (três) vales-presente no valor de R$1.000,00 (mil reais), TODO MÊS, entregues em um cartão Besni válidos para utilização em qualquer uma de nossas lojas.
 						    </span>
 					    </div>
 				    </div>

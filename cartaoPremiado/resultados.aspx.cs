@@ -68,7 +68,7 @@ namespace cartaoPremiado.assets
             }
             else
             {
-                divGanhradores.InnerHtml += "<h2 class=\"basenine text-uppercase\" style=\"font-size:24px;\">Primeiro Sorteio</h2>";
+                divGanhradores.InnerHtml += "<h2 class=\"basenine text-uppercase\" style=\"font-size:24px;\">Próximo Sorteio</h2>";
                 divGanhradores.InnerHtml += "<h3 class=\"basenine\">01/09/2018</h3>";
             }
         }

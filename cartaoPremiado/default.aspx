@@ -13,6 +13,7 @@
     <besni:head runat="server" ID="head" />
 
     <title>Cartão Besni</title>
+
 </head>
 
 <body id="home">
@@ -34,13 +35,12 @@
 
     <div class="container">
         <h2 class="basenine text-uppercase degrade-vermelho">
-            Concorra!<br />
-            Nas compras acima de R$250,00
+            Suas compras com cartão Besni<br /> podem valer prêmios todo mês!
         </h2>
         <div style="margin: 70px 0px;">
             <h3 class="basenine text-uppercase cinza">Saiba como participar</h3>
             <div class="traco-vermelho"></div>
-            Para concorrer aos Vales-Presente é só  ir até qualquer loja Besni e na compra de, no mínimo, R$ 250,00 (duzentos e cinquenta reais) em produtos com cartão Besni, durante o período de participação da promoção, você receberá 01 (um) cupom automaticamente para participar.
+            Para concorrer, é só ir até qualquer loja Besni durante o período de participação da promoção e efetuar compras no valor mínimo de R$250,00 (duzentos e cinquenta reais) com seu cartão Besni, que automaticamente você estará participando da promoção. 
             <br>
             <br>
             <em><a href="/como-participar.aspx">saiba mais</a></em>
@@ -68,15 +68,12 @@
             <div class="conteudo">
                 <div class="fundo-cinza">
                     <h3 class="text-uppercase basenine">
-                        <em class="basenine-bd-italic">500</em> vales-presente de <em class="basenine-bd-italic">R$100</em> <br>
-                        e <em class="basenine-bd-italic">3</em> vales-presente de <em class="basenine-bd-italic">R$1000</em>
+                        <em class="basenine-bd-italic">500</em> vales-presente de <em class="basenine-bd-italic">R$100,00</em> <br>
+                        e <em class="basenine-bd-italic">3</em> vales-presente de <em class="basenine-bd-italic">R$1.000,00</em>
                     </h3>
                     <div class="traco-vermelho"></div>
                     <p class="txt">
-                        São 500 premiações no valor de R$100,00 (cem reais) 
-                        e 3 premiações no valor de R$1000,00 (mil reais) para 
-                        comprar efetuadas com o cartão Besni acima de
-                        R$250,00 (duzentos e cinquenta reais)
+                        Todos os vales-presentes serão <strong>entregues em um cartão Besni</strong>, válidos para utilização em qualquer uma de nossas lojas.
                     </p>
                     <em><a href="/como-participar.aspx">saiba mais</a></em>
                 </div>
@@ -92,6 +89,8 @@
             </h2>
 
             <div id="divInstagram" runat="server"></div>
+            
+            <div id="instafeed"></div>
 
             <div style="margin: 3rem auto 30px auto;" class="traco-vermelho"></div>
             <h3 class="basenine">#CartaoDaSorteBesni</h3>
@@ -123,6 +122,7 @@
 
     <!--scripts-->
     <besni:scripts runat="server" ID="scripts" />
+
 
 </body>
 </html>

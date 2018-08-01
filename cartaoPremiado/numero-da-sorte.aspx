@@ -5,7 +5,6 @@
 <%@ Register Src="~/include/footer.ascx" TagPrefix="besni" TagName="footer" %>
 <%@ Register Src="~/include/scripts.ascx" TagPrefix="besni" TagName="scripts" %>
 
-
 <!doctype html>
 <html>
 
@@ -44,13 +43,12 @@
                 não é um dos premiados Besni
             </p>
             <div class="traco-vermelho center"></div>
-            <form action="javascript:buscarCupons($('#cpf').val(), $('#nascimento').val(), $('#email').val());" method="post" id="formNumeroSorte">
+            <form action="javascript:buscarCupons($('#cpf').val(), $('#nascimento').val());" method="post" id="formNumeroSorte">
                 <div style="width: 530px; max-width: 100%; margin: auto;">
 
                     <%--<input type="text" name="nome" placeholder="NOME" class="nome inputs" />--%>
                     <input type="text" name="cpf" id="cpf" value="" class="cpf" placeholder="CPF" />
                     <input type="text" name="nascimento" id="nascimento" value="" class="nascimento" placeholder="DATA DE NASCIMENTO" />
-                    <input type="email" name="email" id="email" placeholder="E-MAIL" class="email inputs" />
 
                 </div>
                 <hr />
@@ -58,29 +56,26 @@
             </form>
             <hr />
             <hr />
-            <section id="divGanhadores" runat="server">
-                <%--<div class="ganhadores">
-                    <h2 class="basenine text-uppercase">Cupons</h2>
-                    <div class="traco-branco center"></div>
-                    <ul>
-                        <li>cód. 02689-9
-                        </li>
-                        <li>cód. 02689-9
-                        </li>
-                        <li>cód. 02689-9
-                        </li>
-                        <li>cód. 02689-9
-                        </li>
-                        <li>cód. 02689-9
-                        </li>
-                        <li>cód. 02689-9
-                        </li>
-                    </ul>
-                </div>--%>
+            <section id="divGanhadores" runat="server"></section>
+
+            <section id="secEmail" runat="server" style="display: none">
+
+                <div class="traco-vermelho center"></div>
+                <form action="javascript:atualizaEmail($('#email').val(), $('#cpf').val());" method="post" id="formEmail">
+                    <p style="width: 1000px; margin: auto; max-width: 100%;">
+                        Deseja receber os seus cupons por e-mail?
+                    </p>
+                    <input type="email" name="email" id="email" placeholder="E-MAIL" class="email inputs" /><br />
+                    <button class="button-normal btn-buscar">Enviar</button>
+                </form>
+                <hr />
+            
+                <p id="msg" style="display:none"></p>
             </section>
+
             <div class="traco-vermelho center"></div>
             <p style="width: 1000px; margin: auto; max-width: 100%;">
-                Os prêmios serão entregues aos ganhadores, livres de quaisquer ônus, em até 30 (trinta) dias da data da respectiva apuração, no endereço de residência dos ganhadores (conforme dados informados no cadastro), sendo certo que no momento da entrega, deverão estar munido dos documentos pessoais (CPF e RG) e ainda, assinar o respectivo Termo de Quitação e Entrega de Prêmio. Caso qualquer participante contemplado opte pelo recebimento da motocicleta, esta será entregue livre de quaisquer ônus, sendo de responsabilidade das Promotoras o pagamento do licenciamento, emplacamento e IPVA relativos ao ano de entrega do automóvel.
+               Os prêmios serão entregues aos ganhadores, livres de quaisquer ônus, em até 30 (trinta) dias da data da respectiva apuração, no endereço de residência dos ganhadores (conforme dados informados no cadastro), sendo certo que no momento da entrega, deverão estar munido dos documentos pessoais (CPF e RG) e, ainda, assinar o respectivo Termo de Quitação e Entrega de Prêmio.
             </p>
         </div>
     </section>
@@ -113,7 +108,7 @@
             return req;
         }
 
-        function buscarCupons(cpf, nascimento, email) {
+        function buscarCupons(cpf, nascimento) {
 
             if (cpf != "")
 
@@ -124,22 +119,40 @@
                 if (ajax2.readyState == 4) {
                     if (ajax2.status == 200) {
 
-                        //alert(ajax2.responseText);
 
-                        //MyArray = ajax2.responseText.split("Ø");
-                        // jQuery("#usuariosCadastrados").html(MyArray[0]);
-                        // jQuery("#totalizador").html(MyArray[1])
                         jQuery("#divGanhadores").html(ajax2.responseText);
-
-                        //Ajustar execel
-                        // jQuery(".imagemExcel").attr("id", id);
-
-                        // $('#mask').hide();
+                        $('#secEmail').show();
+                        $('html,body').animate({
+                            scrollTop: $("#nascimento").offset().top
+                        }, 'slow');
+                        $('#cpf').attr("readonly", "readonly"); 
+                        $('#nascimento').attr("readonly", "readonly"); 
                     }
                 }
             }
             ajax2.send(null);
         }
+
+        function atualizaEmail(email, cpf) {
+
+            if (email != "")
+
+                ajax2 = ajaxInit();
+            ajax2.open("GET", "/ajax/acoes.aspx?acao=atualizaEmail&email=" + email + "&cpf=" + cpf, true);
+            ajax2.setRequestHeader("Content-Type", "charset=iso-8859-1");
+            ajax2.onreadystatechange = function () {
+                if (ajax2.readyState == 4) {
+                    if (ajax2.status == 200) {
+                        
+                        jQuery("#msg").html(ajax2.responseText);
+                        $('#msg').show();
+                    }
+                }
+            }
+            ajax2.send(null);
+        }
+
+
     </script>
 
 </body>

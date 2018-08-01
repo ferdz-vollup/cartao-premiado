@@ -40,6 +40,15 @@ namespace cartaoPremiado {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGanhadores;
         
         /// <summary>
+        /// Controle secEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl secEmail;
+        
+        /// <summary>
         /// Controle footer.
         /// </summary>
         /// <remarks>
