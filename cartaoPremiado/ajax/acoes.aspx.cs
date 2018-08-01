@@ -22,9 +22,7 @@ namespace cartaoPremiado.ajax
         utils objUtils = new utils();
         private OleDbDataReader rsLogin, rsCadastros, rsIdade, rsEmail, rs;
 
-        string retorno = "", retorno2 = "";
-
-        //int total = 0, aux = 0;
+        string retorno = "", retorno2 = "", concurso = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,6 +33,12 @@ namespace cartaoPremiado.ajax
 
             switch (acao)
             {
+                //SITE
+
+                case "buscarCupons":
+                    buscarCupons(Request["cpf"].ToString(), Request["nascimento"].ToString(), Request["email"].ToString());
+                    break;
+
                 //ADMINISTRACAO
                 case "loginAdministrador":
                     loginAdministrador(Request["email"].ToString(), Request["password"].ToString());
@@ -55,9 +59,45 @@ namespace cartaoPremiado.ajax
                 case "donwloadGanhadores":
                     donwloadGanhadores();
                     break;
+                case "donwloadCupons":
+                    donwloadCupons();
+                    break;
                 default:
                     break;
             }
+        }
+
+        //SITE
+        public void buscarCupons(string cpf, string nascimento, string email)
+        {
+            rs = objBD.ExecutaSQL("EXEC psuCuponsPorCPF '" + cpf.Replace(".","").Replace("-", "") + "','" + nascimento + "', '" + email + "'");
+
+            if (rs == null)
+            {
+                throw new Exception();
+            }
+
+            if (rs.HasRows)
+            {
+                retorno += "<div class=\"ganhadores\">";
+                retorno += "<h2 class=\"basenine text-uppercase\">Cupons</h2>";
+                retorno += "<div class=\"traco-branco center\"></div>";
+
+                // <ul>
+
+                while (rs.Read())
+                {
+                    retorno += "<li>cód. " + rs["CUP_NUMERO_SORTE"] +"</li>";
+                }
+                retorno += "</ul>";
+                retorno += "</div>";
+
+                Response.Write(retorno);
+                Response.End();
+
+            }
+            rs.Close();
+            rs.Dispose();
         }
 
         //ADMINISTRACAO
@@ -259,6 +299,9 @@ namespace cartaoPremiado.ajax
                 if (rs.HasRows)
                 {
                     rs.Read();
+
+                    concurso = rs["CON_NUMERO"].ToString();
+
                     //Row
                     sb.AppendFormat("<tr>\r\n");
                     sb.AppendFormat("\t<td colspan='2'>Concurso: " + rs["CON_NUMERO"] + " (" + rs["CON_DATA"] + ")</td>\r\n");
@@ -307,7 +350,7 @@ namespace cartaoPremiado.ajax
 
                     sb.AppendFormat("<tr>\r\n");
                     sb.AppendFormat("\t<td class=\"tabRow\">Série</td>\r\n");
-                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BESNI"].ToString().Substring(0, 3) + "</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["PRE_BESNI"].ToString().Substring(0, 1) + "</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
@@ -316,31 +359,31 @@ namespace cartaoPremiado.ajax
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("\t<td colspan='5'>&nbsp;</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td colspan='18'><b>Apuração da série</b></td>\r\n");
+                    sb.AppendFormat("\t<td colspan='5'><b>Apuração da série</b></td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td td colspan='18'>A definição da série participante se dará a partir dos prêmios da Extração da Loteria Federal, lidos de cima para baixo, por meio da combinação das dezenas simples do primeiro ao terceiro prêmio.</td>\r\n");
+                    sb.AppendFormat("\t<td td colspan='5'>A definição da série participante se dará a partir dos prêmios da Extração da Loteria Federal, lidos de cima para baixo, por meio da combinação das dezenas simples do primeiro ao terceiro prêmio.</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("\t<td colspan='5'>&nbsp;</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td colspan='18'>Caso o número de série encontrado seja superior à maior série da apuração, deverá ser subtraída a quantidade de séries da apuração, do número de série encontrado, tantas vezes quantas forem necessárias, até que o número obtido esteja dentro do intervalo de séries da apuração. Caso o número de série encontrado seja inferior à menor série da apuração, deverá ser adicionada a quantidade de séries da apuração, do número de série encontrado, tantas vezes quantas forem necessárias, até que o número obtido esteja dentro do intervalo de séries da apuração.</td>\r\n");
+                    sb.AppendFormat("\t<td colspan='5'>Caso o número de série encontrado seja superior à maior série da apuração, deverá ser subtraída a quantidade de séries da apuração, do número de série encontrado, tantas vezes quantas forem necessárias, até que o número obtido esteja dentro do intervalo de séries da apuração. Caso o número de série encontrado seja inferior à menor série da apuração, deverá ser adicionada a quantidade de séries da apuração, do número de série encontrado, tantas vezes quantas forem necessárias, até que o número obtido esteja dentro do intervalo de séries da apuração.</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("\t<td colspan='5'>&nbsp;</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
 
                     sb.AppendFormat("<tr>\r\n");
-                    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                    sb.AppendFormat("\t<td colspan='5'>&nbsp;</td>\r\n");
                     sb.AppendFormat("</tr>\r\n");
                 }
                 rs.Close();
@@ -353,7 +396,7 @@ namespace cartaoPremiado.ajax
                 //QUEBRA DE TABLELA
                 //Row
                 sb.AppendFormat("<tr>\r\n");
-                sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
+                sb.AppendFormat("\t<td colspan='5'>&nbsp;</td>\r\n");
                 sb.AppendFormat("</tr>\r\n");
 
                 //GANHADORES
@@ -361,129 +404,51 @@ namespace cartaoPremiado.ajax
                 sb.AppendFormat("<table>\r\n");
                 sb.AppendFormat("<thead>\r\n");
                 sb.AppendFormat("<tr>\r\n");
-                sb.AppendFormat("\t<td colspan='18' class=\"tabHead\"><b>GANHADORES</b></td>\r\n");
+                sb.AppendFormat("\t<td colspan='5' class=\"tabHead\"><b>GANHADORES</b></td>\r\n");
                 sb.AppendFormat("</tr>\r\n");
                 sb.AppendFormat("</thead>\r\n");
                 sb.AppendFormat("<tbody>\r\n");
 
                 //Row
                 sb.AppendFormat("<tr>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Número da Sorte</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">CNPJ da Loja</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Nome</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">CPF</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">RG</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Nascimento</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Sexo</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Telefone</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Celular</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">E-mail</td>\r\n");
-
-                sb.AppendFormat("\t<td class=\"tabRow\">CEP</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Logradouro</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Número</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Complemento</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Bairro</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Cidade</td>\r\n");
-                sb.AppendFormat("\t<td class=\"tabRow\">Estado</td>\r\n");
-
-
-                sb.AppendFormat("\t<td class=\"tabRow\">Imagem do Cupom</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">Número da Sorte</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">Nome</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">CPF</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">Nascimento</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">E-mail</td>\r\n");
                 sb.AppendFormat("</tr>\r\n");
 
                 //TIRAR PARAMETRO FIXO
-                //rs = objBD.ExecutaSQL("EXEC Ganhadoresv1 '11832269'");
+                rs = objBD.ExecutaSQL("Select P.CUP_NUMERO_SORTE, C.CLI_NOME, C.CLI_CPF, Convert(varchar(10), C.CLI_DT_NASCIMENTO, 103) as CLI_DT_NASCIMENTO, C.CLI_EMAIL from Ganhadores G INNER JOIN Cupons P ON (P.CUP_ID = G.CUP_ID) INNER JOIN Clientes C ON (C.CLI_ID = G.CLI_ID) Where G.CON_ID IN (Select  CON_ID from Concursos where CON_NUMERO = "+ concurso + ")");
 
-                //if (rs == null)
-                //{
-                //    throw new Exception();
-                //}
+                if (rs == null)
+                {
+                    throw new Exception();
+                }
 
-                //if (rs.HasRows)
-                //{
-                //    while (rs.Read())
-                //    {
-                //        sb.AppendFormat("<tr>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CUP_NUMERO_SORTE"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CUP_CNPJ"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td style=\"width: 400px;\">" + rs["CAD_NOME"] + " </td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_CPF"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_RG"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_DATA_NASCIMENTO"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_SEXO"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_TELEFONE"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_CELULAR"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_EMAIL"] + "</td>\r\n");
+                if (rs.HasRows)
+                {
+                    while (rs.Read())
+                    {
+                        sb.AppendFormat("<tr>\r\n");
+                            sb.AppendFormat("\t<td >" + rs["CUP_NUMERO_SORTE"] + "</td>\r\n");
+                            sb.AppendFormat("\t<td >" + rs["CLI_NOME"] + "</td>\r\n");
+                            sb.AppendFormat("\t<td >" + rs["CLI_CPF"] + "</td>\r\n");
+                            sb.AppendFormat("\t<td >" + rs["CLI_DT_NASCIMENTO"] + "</td>\r\n");
+                            sb.AppendFormat("\t<td >" + rs["CLI_EMAIL"] + "</td>\r\n");
+                        sb.AppendFormat("</tr>\r\n");
 
-                //        sb.AppendFormat("\t<td >" + rs["CAD_CEP"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_LOGRADOURO"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_NUMERO"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_COMPLEMENTO"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_BAIRRO"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_CIDADE"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td >" + rs["CAD_ESTADO"] + "</td>\r\n");
+                    }
 
-                //        sb.AppendFormat("\t<td ><a href='http://promocaobesni.com.br/upload/cupons/usuarios/" + rs["CUP_IMAGEM"] + "'>" + rs["CUP_IMAGEM"] + "</a></td>\r\n");
-                //        sb.AppendFormat("</tr>\r\n");
-
-                //        //INSERIR NA TABELA DE GANHADOERS
-                //        //objBD.ExecutaSQL("insert into ganhadores(CON_ID, CAD_ID, CUP_ID) SELECT '1','" + rs["CAD_ID"] + "','" + rs["CUP_ID"] + "'");
-
-                //    }
-
-                //    sb.AppendFormat("<tr>\r\n");
-                //    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
-                //    sb.AppendFormat("</tr>\r\n");
-
-                //    sb.AppendFormat("<tr>\r\n");
-                //    sb.AppendFormat("\t<td colspan='18'>&nbsp;</td>\r\n");
-                //    sb.AppendFormat("</tr>\r\n");
-
-                //    rs.Close();
-                //    rs.Dispose();
-                //}
+                    rs.Close();
+                    rs.Dispose();
+                }
 
                 //Footer
                 sb.AppendFormat("</tbody>\r\n");
                 sb.AppendFormat("</table>\r\n");
 
                 //FIM GANHADORES
-
-                //rs = objBD.ExecutaSQL("select DISTINCT CAD_NOME, CAD_CPF FROM cadastro order by CAD_NOME");
-
-                //if (rs == null)
-                //{
-                //    throw new Exception();
-                //}
-                //if (rs.HasRows)
-                //{
-
-                //    sb.AppendFormat("<table>\r\n");
-                //    sb.AppendFormat("<thead>\r\n");
-                //    sb.AppendFormat("<tr>\r\n");
-                //    sb.AppendFormat("\t<td colspan='2' class=\"tabHead\">Participantes</td>\r\n");
-                //    sb.AppendFormat("</tr>\r\n");
-                //    sb.AppendFormat("</thead>\r\n");
-                //    sb.AppendFormat("<tbody>\r\n");
-
-                //    sb.AppendFormat("<tr>\r\n");
-                //    sb.AppendFormat("\t<td class=\"tabHead\">Nome</td>\r\n");
-                //    sb.AppendFormat("\t<td class=\"tabHead\">CPF</td>\r\n");
-                //    sb.AppendFormat("</tr>\r\n");
-
-                //    while (rs.Read())
-                //    {
-                //        sb.AppendFormat("<tr>\r\n");
-                //        sb.AppendFormat("\t<td class=\"tabRow\">" + rs["CAD_NOME"] + "</td>\r\n");
-                //        sb.AppendFormat("\t<td class=\"tabRow\">" + rs["CAD_CPF"] + "</td>\r\n");
-                //        sb.AppendFormat("</tr>\r\n");
-                //    }
-
-                //    //Footer
-                //    sb.AppendFormat("</tbody>\r\n");
-                //    sb.AppendFormat("</table>\r\n");
-
-                //}
 
                 rs.Close();
                 rs.Dispose();
@@ -494,6 +459,78 @@ namespace cartaoPremiado.ajax
 
                 // return null;
             }
+        }
+
+        public void donwloadCupons()
+        {
+            Response.Clear();
+            Response.AddHeader("content-disposition", string.Format("attachment;filename=Cupons.xls", "xyz"));
+
+            Response.ContentType = "application/ms-excel";
+            Response.ContentEncoding = System.Text.Encoding.Default;
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("<style type=\"text/css\">\r\n");
+            sb.Append(".tabHead\r\n");
+            sb.Append("{\r\n");
+            sb.Append("   background-color: #cccccc;\r\n");
+            sb.Append("   border: solid 1px black;\r\n");
+            sb.Append("}\r\n");
+            sb.Append(".tabRow\r\n");
+            sb.Append("{\r\n");
+            sb.Append("   border: solid 1px black;\r\n");
+            sb.Append("}\r\n");
+            sb.Append("</style>\r\n\r\n");
+
+            //SORTEIO E NÚMEROS
+            //Header
+            sb.AppendFormat("<table>\r\n");
+            sb.AppendFormat("<thead>\r\n");
+            sb.AppendFormat("<tr>\r\n");
+            sb.AppendFormat("\t<td colspan='2' class=\"tabHead\">LISTA DE CUPONS GERADOS</td>\r\n");
+            sb.AppendFormat("</tr>\r\n");
+
+            sb.AppendFormat("</thead>\r\n");
+            sb.AppendFormat("<tbody>\r\n");
+
+
+            sb.AppendFormat("<tr>\r\n");
+            sb.AppendFormat("\t<td colspan='2'>&nbsp;</td>\r\n");
+            sb.AppendFormat("</tr>\r\n");
+            sb.AppendFormat("<tr>\r\n");
+            sb.AppendFormat("\t<td class=\"tabHead\">Número da Sorte</td>\r\n");
+            sb.AppendFormat("\t<td class=\"tabHead\">Nome do Cliente</td>\r\n");
+            sb.AppendFormat("</tr>\r\n");
+
+            rs = objBD.ExecutaSQL("select DISTINCT CUP_NUMERO_SORTE, (select CLI_NOME FROM Clientes WHERE CLI_ID = Cupons.CLI_ID) as Nome from Cupons ORDER BY CUP_NUMERO_SORTE");
+
+            if (rs == null)
+            {
+                throw new Exception();
+            }
+            if (rs.HasRows)
+            {
+                while (rs.Read())
+                {
+                    sb.AppendFormat("<tr>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["CUP_NUMERO_SORTE"] + "</td>\r\n");
+                    sb.AppendFormat("\t<td class=\"tabRow\">" + rs["Nome"] + "</td>\r\n");
+                    sb.AppendFormat("</tr>\r\n");
+                }
+
+            }
+
+            //Footer
+            sb.AppendFormat("</tbody>\r\n");
+            sb.AppendFormat("</table>\r\n");
+
+            rs.Close();
+            rs.Dispose();
+
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Write(sb.ToString());
+            Response.End();
         }
 
     }

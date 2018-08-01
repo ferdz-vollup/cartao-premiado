@@ -25,7 +25,8 @@ namespace cartaoPremiado.admin
             objBD = new bd();
 
             /*INICIO DOS TESTES*/
-            DirectoryInfo dirInfo = new DirectoryInfo(@"e:\home\promocaobesni\web\arquivos");
+           // DirectoryInfo dirInfo = new DirectoryInfo(@"e:\home\promocaobesni\web\arquivos");
+            DirectoryInfo dirInfo = new DirectoryInfo(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos");
 
             BuscaArquivos(dirInfo);
 
@@ -65,8 +66,8 @@ namespace cartaoPremiado.admin
             string linha = "";
             string[] linhaseparada = null;
 
-            // StreamReader reader = new StreamReader(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos\CAMPANHASORTEIO_0001_20180708_161827.csv", Encoding.UTF8, true);
-            StreamReader reader = new StreamReader(@"e:\home\promocaobesni\web\arquivos\" + arquivo + "", Encoding.UTF8, true);
+             StreamReader reader = new StreamReader(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos\CAMPANHASORTEIO_0001_20180708_161827.csv", Encoding.UTF8, true);
+            //StreamReader reader = new StreamReader(@"e:\home\promocaobesni\web\arquivos\" + arquivo + "", Encoding.UTF8, true);
 
             //LIMPAR A TABELA ANTES DE IMPORTAR
             rs = objBD.ExecutaSQL("truncate table DadosImportados");
@@ -80,7 +81,7 @@ namespace cartaoPremiado.admin
                 try
                 {
                     //IMPORTAR PARA PLANILHA TEMPORARIA
-                    rs = objBD.ExecutaSQL("exec piuAtualizacaoDiaria '" + linhaseparada[0] + "','" + linhaseparada[2] + "','" + linhaseparada[3].TrimStart('0') + "','" + linhaseparada[5] + "','" + linhaseparada[8] + "','" + linhaseparada[1] + "','" + linhaseparada[6] + "','" + linhaseparada[7] + "' ");
+                    rs = objBD.ExecutaSQL("exec piuAtualizacaoDiaria '" + linhaseparada[0] + "','" + linhaseparada[2] + "','" + linhaseparada[3].TrimStart('0') + "','" + linhaseparada[5] + "','" + linhaseparada[8] + "','" + linhaseparada[1] + "','" + linhaseparada[6] + "','" + linhaseparada[7] + "','"+ arquivo + "' ");
                 }
                 catch (Exception)
                 {
