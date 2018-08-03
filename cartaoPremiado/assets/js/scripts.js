@@ -547,7 +547,7 @@ function enviaFerdz(idForm) {
         var form = jQuery(idForm).serialize();
         jQuery.ajax({
             type: "GET",
-            url: "http://www.misasi.com.br/form/flagform.asp",
+            url: "https://www.vollup.com/form/flagform.asp",
             async: true,
             data: form,
             crossorigin: true,
