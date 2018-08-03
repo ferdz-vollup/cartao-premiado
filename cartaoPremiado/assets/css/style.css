@@ -145,13 +145,13 @@ section#menu {position: fixed;z-index: 99;width: 100%;background-color: white;to
 
 /* FALE CONOSCO */
 #fale-conosco form {width: 900px;margin: auto;max-width: 100%;display: table;}
-input, textarea {background-color: #f1f1f1;border: 1px solid #f9f9f9;padding: 6px 15px;font-size: 16px;display: inline-table;margin: 0px 5px;margin-bottom: 10px;font-family: 'Roboto', sans-serif;color: #6a6a6a;outline:none}
+input, textarea {background-color: #f1f1f1;border: 1px solid #f9f9f9;padding: 6px 15px;font-size: 16px;display: inline-table;margin: 0px 3.9px;margin-bottom: 10px;font-family: 'Roboto', sans-serif;color: #6a6a6a;outline:none}
 #fale-conosco form input.email, #fale-conosco form input.telefone {padding:6px 40px;}
 #fale-conosco form input.nome {width: calc(70% - 10px);}
 #fale-conosco form input.telefone {width: calc(30% - 10px);background-image: url(../images/icone-telefone.png);background-position: 15px center;background-repeat: no-repeat;}
 #fale-conosco form input.cpf {width: calc(50% - 10px);}
 #fale-conosco form input.email {width: calc(50% - 10px);background-image: url(../images/icone-email.png);background-position: 15px 6.5px;background-repeat: no-repeat;}
-#fale-conosco form textarea {width: calc(100% - 10px);height:200px;display:block;resize:none;}
+#fale-conosco form textarea {width: calc(100% - 7px);height:200px;display:block;resize:none;}
 #fale-conosco form button.button-normal {font-family: 'baseninebold';}
 #fale-conosco #formFaleConosco button {float: right;margin-right: 5px;outline: none;}
 #fale-conosco #formFaleConosco button.btn-enviar {margin-left:10px;}
