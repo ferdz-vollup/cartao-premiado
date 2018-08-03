@@ -25,3 +25,8 @@
   gtag('config', 'UA-123304400-1');
 
 </script>
+
+<meta property="og:image" content="/assets/images/fb_image.png">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="600"> /** PIXELS **/
+<meta property="og:image:height" content="313"> /** PIXELS **/
