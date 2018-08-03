@@ -38,9 +38,9 @@
             <hr />
             <hr />
             <p>
-                Visualize seus Cupons aqui e confira se você
+                Consulte seus cupons e confira quantas 
                 <br />
-                não é um dos premiados Besni
+                chances você tem de ganhar!
             </p>
             <div class="traco-vermelho center"></div>
             <form action="javascript:buscarCupons($('#cpf').val(), $('#nascimento').val());" method="post" id="formNumeroSorte">
@@ -123,7 +123,7 @@
 
                             if (ajax2.responseText == "vazio")
                             {
-                                jQuery("#msg1").html("Dados não localizados no sistema! </br> Por favor, verique se estão corretos.")
+                                jQuery("#msg1").html("Dados não localizados no sistema! </br> Por favor, verifique se estão corretos.")
                             }
                             else {
                                 jQuery("#divGanhadores").html(ajax2.responseText);

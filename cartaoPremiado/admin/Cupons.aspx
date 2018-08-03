@@ -35,7 +35,7 @@
 
     <div id="mask" style="z-index: 9999; top: 0; left: 0; position: fixed; width: 100%; height: 100%; background-color: rgba(255,255,255,0.6);">
         <div style="position: absolute; margin: auto; top: 0; bottom: 0; left: 0; right: 0; width: 770px; height: 490px">
-            <img src="../assets/imagens/load.gif">
+            <img src="../assets/images/load.gif">
         </div>
     </div>
 
@@ -65,19 +65,22 @@
                                 <label>
                                     Filtrar por CPF:
                                     <input type="text" id="cpf" name="cpf" onblur="filtrarCuponsPorCPF(this.value);" />
+                                    <input type="button" value="Filtrar" onclick="filtrarCuponsPorCPF($('#cpf').val())" />
+                                    |
+                                    <input type="button" value="limpar" onclick="limparFiltro();" />
                                 </label>
 
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th colspan="5" style="text-align: right;"><span id="totalizador2">Total de <strong id="totalizador" runat="server">0 </strong>cupons gerados na promoção</span></th>
+                                            <th colspan="5" style="text-align: right;"><span id="totalizador2">Total de <strong id="totalizador" runat="server">  </strong> cupons gerados na promoção</span></th>
                                         </tr>
                                         <tr>
-                                            <th>Número do Cupom</th>
                                             <th>Nome do Usuário</th>
+                                            <th>Número do Cupom</th>
                                             <th>Valor da Compra</th>
                                             <th>Data da Compra</th>
-                                            <th style="width: 150px; text-align: center;">Ações</th>
+                                            <%--<th style="width: 150px; text-align: center;">Ações</th>--%>
                                         </tr>
                                     </thead>
                                     <tbody id="cuponsCadastrados" runat="server"></tbody>
@@ -205,6 +208,11 @@
                 }
             }
             ajax2.send(null);
+        }
+
+        function limparFiltro() {
+            filtrarCuponsPorCPF('');
+            $("#cpf").val("");
         }
 
         function filtrarCuponsPorCPF(cpf) {

@@ -168,8 +168,8 @@ namespace cartaoPremiado.ajax
                         retorno += "  <td>" + rsCadastros["CLI_NUMERO_CARTAO"] + "</td>";
                         retorno += "  <td>" + rsCadastros["CLI_CPF"] + "</td>";
                         retorno += "  <td>";
-                        retorno += "    <a href='javascript:void(0)' onClick='verUser(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a> | ";
-                        retorno += "    <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
+                        retorno += "    <a href='javascript:void(0)' onClick='verUser(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a> ";
+                       // retorno += "    <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
                         retorno += "</td>";
                         retorno += "</tr>";
 

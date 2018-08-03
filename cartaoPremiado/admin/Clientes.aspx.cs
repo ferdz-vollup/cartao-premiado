@@ -183,8 +183,8 @@ namespace cartaoPremiado.admin
                         usuariosCadastrados.InnerHtml += "  <td>" + rsCadastros["CLI_NUMERO_CARTAO"] + "</td>";
                         usuariosCadastrados.InnerHtml += "  <td>" + rsCadastros["CLI_CPF"] + "</td>";
                         usuariosCadastrados.InnerHtml += "  <td>";
-                        usuariosCadastrados.InnerHtml += "      <a href='javascript:void(0)' title='Dados do Usuário' onClick='verUser(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a> | ";
-                        usuariosCadastrados.InnerHtml += "      <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
+                        usuariosCadastrados.InnerHtml += "      <a href='javascript:void(0)' title='Dados do Usuário' onClick='verUser(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>";
+                       // usuariosCadastrados.InnerHtml += "      <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCadastros["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
                         usuariosCadastrados.InnerHtml += "</td>";
                         usuariosCadastrados.InnerHtml += "</tr>";
 

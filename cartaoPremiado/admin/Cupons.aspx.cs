@@ -26,7 +26,7 @@ namespace cartaoPremiado.admin
         {
             objUtils = new utils();
             objBD = new bd();
-            
+
             string acao = Request["acao"];
 
             switch (acao)
@@ -59,10 +59,10 @@ namespace cartaoPremiado.admin
                         cuponsCadastrados.InnerHtml += "  <td>" + rsCupons["CUP_NUMERO_SORTE"] + "</td>";
                         cuponsCadastrados.InnerHtml += "  <td>" + rsCupons["CUP_VALOR"] + "</td>";
                         cuponsCadastrados.InnerHtml += "  <td>" + rsCupons["CUP_DH_COMPRA"] + "</td>";
-                        cuponsCadastrados.InnerHtml += "  <td>";
+                        //cuponsCadastrados.InnerHtml += "  <td>";
                         //cuponsCadastrados.InnerHtml += "      <a href='javascript:void(0)' title='Dados do Usuário' onClick='verUser(" + rsCupons["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosUsuario'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a> | ";
                         //cuponsCadastrados.InnerHtml += "      <a href='javascript:void(0)' title='Ver Cupons' onClick='verCupons(" + rsCupons["CLI_CPF"] + ")' data-toggle='modal' data-target='#dadosCupom'><i class='fa fa-search' aria-hidden='true'></i></a> ";
-                        cuponsCadastrados.InnerHtml += "</td>";
+                        //cuponsCadastrados.InnerHtml += "</td>";
                         cuponsCadastrados.InnerHtml += "</tr>";
 
                         if (aux == 0)

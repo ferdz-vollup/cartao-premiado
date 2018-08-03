@@ -39,7 +39,9 @@
                 encontre uma besni perto de você
             </h3>
             <div class="traco-vermelho center"></div>
-            <p>                São 36 lojas espalhadas pelo Estado de São Paulo. <br />                Preencha os campos e encontre aquela que fica mais perto de você!
+            <p>
+                São 36 lojas espalhadas pelo Estado de São Paulo. <br />
+                Digite seu CEP e veja a(s) unidade(s) mais próxima(s) de você.
             </p>
             <div class="traco-vermelho center"></div>
             <div style="width: 530px;max-width: 100%;margin: auto;">

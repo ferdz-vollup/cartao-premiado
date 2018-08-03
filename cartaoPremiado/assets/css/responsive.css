@@ -128,11 +128,12 @@
 
     /* NUMERO DA SORTE */
     #numero-da-sorte #banner .mao-cartao {display:none;}
-    #numero-da-sorte .cpf {margin:0px;}
+    #numero-da-sorte .cpf {margin:0px;margin-bottom:10px;}
+    #numero-da-sorte input:not(.cpf) {width:100%}
 
     /* RESULTADOS */
     #resultados #banner .container .mulher-vitrine {display:none;}
-
+    
     /* FAQ */
     #faq #banner .cartao-vitrine, #faq #banner .moedas {display:none;}
 

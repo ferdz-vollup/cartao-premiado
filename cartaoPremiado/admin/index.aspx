@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="relatorios.aspx">
+                        <a href="javascript:void(0);">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="instagram.aspx">
+                        <a href="javascript:void(0);">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -217,7 +217,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <a href="javascript:void(0);" class="list-group-item">
-                                    <i class="fa fa-gift fa-fw"></i><strong>Nome da Planilha Importada</strong>
+                                    <i class="fa fa-gift fa-fw"></i><strong>Planilha</strong>
                                     <span class="pull-right text-muted" id="Span1" runat="server">modelo.csv</span>
                                 </a>
                                 <a href="javascript:void(0);" class="list-group-item">

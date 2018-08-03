@@ -12,3 +12,16 @@
 <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 <link rel="shortcut icon" href="http://www.besni.com.br/images/favicon.png?d=1508877631" />
 <link rel="apple-touch-icon" href="http://www.besni.com.br//images/apple-touch-icon.png" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123304400-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-123304400-1');
+
+</script>

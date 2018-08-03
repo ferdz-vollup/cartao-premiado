@@ -34,7 +34,7 @@
 
     <div id="mask" style="z-index: 9999; top: 0; left: 0; position: fixed; width: 100%; height: 100%; background-color: rgba(255,255,255,0.6);">
         <div style="position: absolute; margin: auto; top: 0; bottom: 0; left: 0; right: 0; width: 770px; height: 490px">
-            <img src="../assets/imagens/load.gif">
+            <img src="../assets/images/load.gif">
         </div>
     </div>
 
@@ -72,6 +72,7 @@
                                 <label>
                                     Filtrar por CPF:
                                     <input type="text" id="cpf" name="cpf" onblur="filtrarUsuario(this.value);" />
+                                    <input type="button" value="Filtrar" onclick="filtrarUsuario($('#cpf').val())" /> | <input type="button" value="limpar" onclick="limparFiltro();" />
                                 </label>
                               <!-- <label style="float: right;" runat="server" id="imgPlanilha">
                                     <img src="../assets/imagens/ico-excel.png" class="imagemExcel" onclick="exportarUsuarios(this.id)" id="2"  alt="Fazer Download" style="margin-right:10px;cursor: pointer;"  width="34px">
@@ -216,6 +217,12 @@
                 }
             }
             ajax2.send(null);
+        }
+
+        function limparFiltro()
+        {
+            filtrarUsuario('');
+            $("#cpf").val("");
         }
 
         function filtrarUsuario(cpf) {

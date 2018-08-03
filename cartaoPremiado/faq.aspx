@@ -12,7 +12,7 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Resultados - Cartão Besni</title>
+    <title>Perguntas Frequentes - Cartão Besni</title>
 </head>
 
 <body id="faq">
@@ -47,6 +47,7 @@
             <p>01/08/2018 a 04/01/2019</p>
             <hr />
             <h3 class="basenine">Qual o período válido de compras para participar da promoção?</h3>
+            <div style="max-width:100%;overflow-x:auto">
             <p>
                 <table width="600" margin="2" cellspacing="1" cellpadding="1" border="1">
                     <tr>
@@ -75,6 +76,7 @@
                     </tr>
                 </table>
             </p>
+            </div>
             <hr />
             <h3 class="basenine">Quem pode participar da promoção?</h3>
             <p>Qualquer pessoa física, residente e domiciliada no Brasil e portadora de CPF/MP poderá participar desta promoção.  EXCLUSIVO PARA PORTADORES DO CARTÃO BESNI.</p>
@@ -83,7 +85,7 @@
             <p>Excluem-se de participação na presente promoção as pessoas jurídicas, os acionistas, diretores, empregados, representantes comerciais (e seus sócios) das Lojas Belian Moda Ltda., da Adcard – Administradora de Cartões de Crédito Ltda., da Bluebox Design e Comunicação Ltda e do escritório de advocacia M. Godoy Consultoria Jurídica em Comunicação Publicitária, sendo a identificação de tais condições efetuada, no momento da apuração, por meio de listagem de RH.</p>
             <hr />
             <h3 class="basenine">Qual a premiação da promoção?</h3>
-            <p>Sorteios mensais de 500 (quinhentos) vales-presentes no valor de R$100,00 (cem reais) e 03 (três) de R$1.000,00 (mil reais), entregues em um cartão Besni válidos para utilização em qualquer uma de nossas lojas.</p>
+            <p>Sorteios mensais de 500 (quinhentos) vales-presente no valor de R$100,00 (cem reais) e 03 (três) de R$1.000,00 (mil reais), entregues em um cartão Besni válidos para utilização em qualquer uma de nossas lojas.</p>
             <hr />
             <h3 class="basenine">Como posso participar?</h3>
             <p>Para participar, basta efetuar compras de, no mínimo, R$250,00 (duzentos e cinquenta reais) com cartão de crédito Besni em qualquer loja Besni durante o período de participação da promoção. O cadastro é realizado automaticamente, podendo ser consultado no hotsite da promoção no endereço www.promocaobesnicartaodasorte.com.br</p>
