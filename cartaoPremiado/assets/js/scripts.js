@@ -28,6 +28,23 @@ jQuery(document).ready(function ($) {
     
 
     //INSTA
+	var token = '228889451.1677ed0.2554f24e3a3544dcad7f8fe833f191f4', userid = 228889451;
+	$.ajax({
+		url: 'https://api.instagram.com/v1/users/self/media/recent', // or /users/self/media/recent for Sandbox
+		dataType: 'jsonp',
+		type: 'GET',
+		data: {access_token: token},
+		success: function(data){
+			console.log(data);
+			for(x = 0; x <= 11; x++){
+				$('#instafeed ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>');
+			}
+		},
+		error: function(data){
+			console.log(data);
+		}
+	});
+	
     if ($('#divInstagram').length > 0 && $(window).width() < 481) {
         timeRotate = setInterval(rotacao, 30);
     }
