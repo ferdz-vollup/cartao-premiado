@@ -98,14 +98,13 @@ section#menu {position: fixed;z-index: 99;width: 100%;background-color: white;to
 #home #premiacao .fundo-cinza > em {position: absolute;bottom: 35px;}
 #home #instagram h2 {margin-top:40px;}
 #home #instagram h3 {line-height: 43px;font-size: 33px;}
-#home #instagram #divInstagram {height: 180px;overflow: hidden;}
-#home #instagram #divInstagram ul {width: 1200%;height: 100%;padding: 0px;}
-#home #instagram #divInstagram ul li {position: relative;display: inline-block;border-top: none;border-bottom: none;opacity: 1;float: none;padding: 0px;margin: 15px 0;cursor: pointer;border:5px solid transparent;margin: 0px;padding: 10px;}
-#home #instagram #divInstagram ul li:hover {opacity: 1.0;}
-#home #instagram #divInstagram ul li img {height: 100%;filter: brightness(1.1);-webkit-filter: brightness(1.1);-moz-filter: brightness(1.1);-ms-filter: brightness(1.1);-o-filter: brightness(1.1);}
+#home #instagram #divInstagram {display: none}
 #home #besni-proxima {background-image: url(../images/vitrine-home.jpg);padding: 70px 0px;margin-top: 50px;}
 #home #besni-proxima .btn-onde-estamos {font-family: 'baseninebold';border: 1px solid #231f20;background-color: transparent;color: #231f20;text-transform: uppercase;-webkit-appearance: none;padding: 10px 20px;font-size: 18px;margin-top: 10px;-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;transition: all 0.2s ease-out;}
 #home #besni-proxima .btn-onde-estamos:hover {background-color: white;border: 1px solid white;}
+#home #instafeed {margin-top: 60px;}
+#home #instafeed ul {padding: 0px;list-style: none;display: table;width: 100%;}
+#home #instafeed ul li {display: inline-block;width: calc(16% - 5px);margin: 5px;}
 
 .redes {font-family: 'baseninemedium';font-size: 25px;margin-top: -5px;}
 .redes *:not(a) {display: inline-block;vertical-align: middle}

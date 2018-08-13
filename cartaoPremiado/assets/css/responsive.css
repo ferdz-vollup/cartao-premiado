@@ -68,6 +68,7 @@
     #home #tarja-cartao .cartao-besni {display:none}
     #home #tarja-cartao .escrita {text-align:center;}
     #home #premiacao .fundo-cinza {background-image: none; background-color:#f6f6f6}
+	#home #instafeed ul li {width: 15%;}
 
     /* COMO PARTICIPAR */
     #banner .conteudo > div, #banner .container > div {max-width: 70%;}
@@ -119,6 +120,7 @@
     #home #premiacao .fundo-cinza > em {position: initial;margin-top: 30px;display: block;}
     #home #premiacao .fundo-cinza h3.basenine em {font-family: 'baseninebold';font-style:normal !important;font-size:25px}
     #home #instagram h3 {font-size:23px;}
+	#home #instafeed ul li {width: calc(50% - 10px);}
 
     /* COMO PARTICIPAR */
     #como-participar #banner .conteudo {padding:0px 15px;}
