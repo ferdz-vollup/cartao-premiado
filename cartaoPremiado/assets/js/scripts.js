@@ -37,7 +37,7 @@ jQuery(document).ready(function ($) {
 		success: function(data){
 			console.log(data);
 			for(x = 0; x <= 11; x++){
-				$('#instafeed ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>');
+				$('#instafeed ul').append('<li><a href="'+data.data[x].link+'" target="_blank"><img src="'+data.data[x].images.low_resolution.url+'"></a></li>');
 			}
 		},
 		error: function(data){
