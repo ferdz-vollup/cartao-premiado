@@ -42,6 +42,7 @@
                                     <thead>
                                         <tr>
                                             <th>CPF</th>
+                                            <th style="width: 150px;text-align: center;">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody id="cpfsBloqueados" runat="server"></tbody>
@@ -74,7 +75,26 @@
 
     <!--footer-->
     <besni:footer runat="server" ID="footer" />
-      <script src="js/instagram.js"></script>
+    <script src="js/instagram.js"></script>
+
+    <script type="text/javascript">
+
+        function removerCPF(CAD_CPF) {
+            ajax2 = ajaxInit();
+            ajax2.open("GET", "/ajax/acoes.aspx?acao=removerCPF&cpf=" + CAD_CPF, true);
+            ajax2.setRequestHeader("Content-Type", "charset=iso-8859-1");
+            ajax2.onreadystatechange = function () {
+                if (ajax2.readyState == 4) {
+                    if (ajax2.status == 200) {
+                        jQuery("#" + CAD_CPF).remove();  
+                    }
+                }
+            }
+            ajax2.send(null);
+        }
+    </script>
+
+
 </body>
 
 </html>

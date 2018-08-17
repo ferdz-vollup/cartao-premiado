@@ -35,7 +35,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
@@ -57,7 +57,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
@@ -79,7 +79,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
@@ -92,29 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="javascript:void(0);">
-                            <div class="panel-footer">
-                                <span class="pull-left">Ver detalhes</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-instagram fa-2x"></i>
-                                </div>
-                                <div class="col-xs-12 text-right">
-                                    <div class="huge" id="contagemInstagram" runat="server">0</div>
-                                    <div>Fotos do Instagram</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="javascript:void(0);">
+                        <a href="compras.aspx">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -209,8 +187,22 @@
                     <!-- /.panel -->
                 </div>
 
-                <div class="col-lg-6">
+                 <div class="col-lg-6">
                     <div class="panel panel-default" style="min-height: 430px">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Vendas
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="divVendas" style="width: 100%; min-height: 341px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i>Última Atualização
                         </div>
@@ -245,6 +237,8 @@
                     </div>
                     <!-- /.panel -->
                 </div>
+
+
                 <!-- /.col-lg-8 -->
             </div>
             <!-- /.row -->
@@ -286,68 +280,38 @@
 
                         chart.draw(data, options);
 
-                        //  totalPorLoja();
+                        rangeVendas();
                     }
                 }
             }
             ajax2.send(null);
         }
 
-        function totalPorLoja() {
+        function rangeVendas() {
             ajax2 = ajaxInit();
-            ajax2.open("GET", "../ajax/acoes.aspx?acao=totalPorLoja&Rand=" + Math.ceil(Math.random() * 100000), true);
+            ajax2.open("GET", "../ajax/acoes.aspx?acao=rangeVendas&Rand=" + Math.ceil(Math.random() * 100000), true);
             ajax2.setRequestHeader("Content-Type", "charset=iso-8859-1");
             ajax2.onreadystatechange = function () {
                 if (ajax2.readyState == 4) {
                     if (ajax2.status == 200) {
 
                         var arr = ajax2.responseText.split('|');
-
                         var data = google.visualization.arrayToDataTable([
-                            ['Loja', 'Vendas'],
-                            [arr[0], parseInt(arr[1])],
-                            [arr[2], parseInt(arr[3])],
-                            [arr[4], parseInt(arr[5])],
-                            [arr[6], parseInt(arr[7])],
-                            [arr[8], parseInt(arr[9])],
-                            [arr[10], parseInt(arr[11])],
-                            [arr[12], parseInt(arr[13])],
-                            [arr[14], parseInt(arr[15])],
-                            [arr[16], parseInt(arr[17])],
-                            [arr[18], parseInt(arr[19])],
-                            [arr[20], parseInt(arr[21])],
-                            [arr[22], parseInt(arr[23])],
-                            [arr[24], parseInt(arr[25])],
-                            [arr[26], parseInt(arr[27])],
-                            [arr[28], parseInt(arr[29])],
-                            [arr[30], parseInt(arr[31])],
-                            [arr[32], parseInt(arr[33])],
-                            [arr[34], parseInt(arr[35])],
-                            [arr[36], parseInt(arr[37])],
-                            [arr[38], parseInt(arr[39])],
-                            [arr[40], parseInt(arr[41])],
-                            [arr[42], parseInt(arr[43])],
-                            [arr[44], parseInt(arr[45])],
-                            [arr[46], parseInt(arr[47])],
-                            [arr[46], parseInt(arr[49])],
-                            [arr[48], parseInt(arr[51])],
-                            [arr[50], parseInt(arr[53])],
-                            [arr[52], parseInt(arr[55])],
-                            [arr[54], parseInt(arr[57])],
-                            [arr[56], parseInt(arr[59])],
-                            [arr[58], parseInt(arr[61])],
-                            [arr[60], parseInt(arr[63])],
-                            [arr[62], parseInt(arr[65])],
-                            [arr[64], parseInt(arr[67])]
+                            ['Vendas', 'Vendas', { role: "style" }],
+                            ['R$ 250 à R$ 500', parseInt(arr[0]), "#b87333"],
+                            ['R$ 501 à R$ 999', parseInt(arr[1]), "silver"],
+                            ['+R$ 1.000', parseInt(arr[2]), "gold"]
                         ]);
 
-                        var options = {
-                            title: ''
-                        };
+                        //var options = {
+                        //    title: { position: "none" },
+                        //    legenda: { position: "none" }
+                        //};
 
-                        var chart = new google.visualization.PieChart(document.getElementById('divLoja'));
+                        var chart = new google.visualization.BarChart(document.getElementById('divVendas'));
 
-                        chart.draw(data, options);
+                        chart.draw(data);
+
                     }
                 }
             }

@@ -76,7 +76,7 @@ namespace cartaoPremiado.admin
                                 if (Convert.ToInt16(rsCupons["PAGINA"]) > 1)
                                 {
                                     int pgVoltar = Convert.ToInt16(rsCupons["PAGINA"]) - 1;
-                                    paginacao.InnerHtml += "<li class=\"paginate_button previous\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_previous\"><a href=\"javascript:void(0);\" onClick=\"pagina('" + pgVoltar + "')\"> Anterior </a></ li>";
+                                    paginacao.InnerHtml += "<li class=\"paginate_button previous\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_previous\"><a href=\"cupons.aspx?pagina=" + pgVoltar + "\" onClick=\"pagina('" + pgVoltar + "')\"> Anterior </a></ li>";
                                 }
                                 else
                                 {
@@ -88,7 +88,7 @@ namespace cartaoPremiado.admin
 
                                 //ajueste de última página
                                 int cont_fim = Convert.ToInt16(rsCupons["TOTAL_PAGINAS"]);
-                                if ((cont_fim - cont_inicio) >= 2) { cont_fim = (cont_inicio + 4); }
+                                if ((cont_fim - cont_inicio) >= 2) { cont_fim = (cont_inicio + 7); }
 
                                 for (int aux = cont_inicio; aux < cont_fim + 1; aux++)
                                 {
@@ -102,7 +102,7 @@ namespace cartaoPremiado.admin
                                     else
                                     {
                                         //  paginacao.InnerHtml += "   <li><a href=\"javascript:void(0);\" onClick=\"pagina('" + aux + "')\" title=\"Página " + aux + "\">" + aux + "</a></li>";
-                                        paginacao.InnerHtml += "   <li class=\"paginate_button\" aria-controls=\"dataTables-example\" tabindex=\"0\"><a href=\"javascript:void(0);\" onClick=\"pagina('" + aux + "')\">" + aux + "</ a ></ li >";
+                                        paginacao.InnerHtml += "   <li class=\"paginate_button\" aria-controls=\"dataTables-example\" tabindex=\"0\"><a href=\"cupons.aspx?pagina=" + aux + "\" onClick=\"pagina('" + aux + "')\">" + aux + "</ a ></ li >";
                                     }
                                 }
 
@@ -110,7 +110,7 @@ namespace cartaoPremiado.admin
                                 if (Convert.ToInt16(rsCupons["PAGINA"]) < Convert.ToInt16(rsCupons["TOTAL_PAGINAS"]))
                                 {
                                     int pgAvancar = Convert.ToInt16(rsCupons["PAGINA"]) + 1;
-                                    paginacao.InnerHtml += "<li class=\"paginate_button next\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_next\"><a href=\"javascript:void(0);\" onClick=\"pagina('" + pgAvancar + "')\" > Próximo </a ></li>";
+                                    paginacao.InnerHtml += "<li class=\"paginate_button next\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_next\"><a href=\"cupons.aspx?pagina=" + pgAvancar + "\" onClick=\"pagina('" + pgAvancar + "')\" > Próximo </a ></li>";
 
                                 }
                                 else

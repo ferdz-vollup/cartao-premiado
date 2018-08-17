@@ -221,8 +221,8 @@
 
         function limparFiltro()
         {
-            filtrarUsuario('');
-            $("#cpf").val("");
+            //filtrarUsuario('');
+            window.location.replace("clientes.aspx")
         }
 
         function filtrarUsuario(cpf) {

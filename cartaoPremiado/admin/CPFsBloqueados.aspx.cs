@@ -55,8 +55,9 @@ namespace cartaoPremiado.admin
                     cpfsBloqueados.InnerHtml = "";
                     while (rsCpfs.Read())
                     {
-                        cpfsBloqueados.InnerHtml += "<tr>";
-                        cpfsBloqueados.InnerHtml += "<td>" + rsCpfs["C_CPF"] + "</td>";
+                        cpfsBloqueados.InnerHtml += "<tr id='" + rsCpfs["C_CPF"] + "'>";
+                        cpfsBloqueados.InnerHtml += "   <td>" + rsCpfs["C_CPF"] + "</td>";
+                        cpfsBloqueados.InnerHtml += "   <td><center><a href='javascript:void(0)' title='Remover bloqueio' onClick='removerCPF(" + rsCpfs["C_CPF"] + ")'><i class='fa fa-trash' aria-hidden='true'></i></a></center></td>";
                         cpfsBloqueados.InnerHtml += "</tr>";
                     }
                 }

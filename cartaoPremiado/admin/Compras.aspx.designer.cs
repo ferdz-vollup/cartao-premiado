@@ -10,7 +10,7 @@
 namespace cartaoPremiado.admin {
     
     
-    public partial class index {
+    public partial class Compras {
         
         /// <summary>
         /// Controle head.
@@ -40,139 +40,76 @@ namespace cartaoPremiado.admin {
         protected global::PromocaoBesni.admin.inc.menu menu;
         
         /// <summary>
-        /// Controle contagemCadastros.
+        /// Controle dtInicio.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contagemCadastros;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect dtInicio;
         
         /// <summary>
-        /// Controle contagemCupons.
+        /// Controle imgPlanilha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contagemCupons;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl imgPlanilha;
         
         /// <summary>
-        /// Controle contagemGastos.
+        /// Controle totalizador.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contagemGastos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalizador;
         
         /// <summary>
-        /// Controle linha1.
+        /// Controle totalizador4.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl linha1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalizador4;
         
         /// <summary>
-        /// Controle premioBesni.
+        /// Controle usuariosCadastrados.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl premioBesni;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usuariosCadastrados;
         
         /// <summary>
-        /// Controle premio1.
+        /// Controle paginacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl premio1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl paginacao;
         
         /// <summary>
-        /// Controle premio2.
+        /// Controle divUsuario.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl premio2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUsuario;
         
         /// <summary>
-        /// Controle premio3.
+        /// Controle divCupom.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl premio3;
-        
-        /// <summary>
-        /// Controle premio4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl premio4;
-        
-        /// <summary>
-        /// Controle premio5.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl premio5;
-        
-        /// <summary>
-        /// Controle Span1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span1;
-        
-        /// <summary>
-        /// Controle Span2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span2;
-        
-        /// <summary>
-        /// Controle Span3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span3;
-        
-        /// <summary>
-        /// Controle Span4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span4;
-        
-        /// <summary>
-        /// Controle Span5.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span5;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCupom;
         
         /// <summary>
         /// Controle footer.

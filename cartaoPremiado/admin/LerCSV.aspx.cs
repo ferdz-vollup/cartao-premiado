@@ -66,7 +66,7 @@ namespace cartaoPremiado.admin
             string linha = "";
             string[] linhaseparada = null;
 
-            StreamReader reader = new StreamReader(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos\CAMPANHASORTEIO_0001_20180708_161827.csv", Encoding.UTF8, true);
+            StreamReader reader = new StreamReader(@"C:\svn\cartao-premiado\trunk\cartaoPremiado\arquivos\"+ arquivo + "", Encoding.UTF8, true);
             //StreamReader reader = new StreamReader(@"e:\home\promocaobesni\web\arquivos\" + arquivo + "", Encoding.UTF8, true);
 
             //LIMPAR A TABELA ANTES DE IMPORTAR

@@ -11,18 +11,15 @@
             </li>
             <li>
                 <a href="cupons.aspx"><i class="fa fa-table fa-fw"></i> Números da Sorte</a>
-           <%-- </li>
+            </li>
             <li>
-                <a href="relatorios.aspx"><i class="fa fa-bar-chart-o fa-fw"></i> Relatórios</a>
-            </li>--%>
+                <a href="compras.aspx"><i class="fa fa-credit-card-alt fa-fw"></i> Compras</a>
+            </li>
             <li>
                 <a href="CPFsBloqueados.aspx"><i class="fa fa-wrench fa-fw"></i> CPFs Bloqueados</a>
             </li>
             <li>
                 <a href="ganhadores.aspx"><i class="fa fa-trophy fa-fw"></i> Ganhadores</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" title="Em breve!"><i class="fa fa-picture-o fa-fw"></i> Instagram</a>
             </li>
         </ul>
     </div>
