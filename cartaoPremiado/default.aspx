@@ -90,7 +90,9 @@
 
             <div id="divInstagram" runat="server"></div>
             
-            <div id="instafeed"></div>
+            <div id="instafeed">
+				<ul></ul>
+			</div>
 
             <div style="margin: 3rem auto 30px auto;" class="traco-vermelho"></div>
             <h3 class="basenine">#CartaoDaSorteBesni</h3>

@@ -12,7 +12,8 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Como Participar - Cartão Besni</title>
+    <title>Promoção Cartão da Sorte Besni | Como Participar</title>
+	<meta name="description" content="Veja como participar da Promoção Cartão da Sorte Besni. Quanto mais compras Besni você realizar, mais chances você tem de ganhar."/>
 </head>
 
 <body id="como-participar">
@@ -81,7 +82,7 @@
 					    </div>
 					    <div class="col-md-9 col-xs-12 col-sm-9">
 						    <span class="saiba-concorra">
-							    Serão 05 (cinco) datas de sorteio ao longo da promoção, de acordo com os resultados da extração da Loteria Federal do Brasil dos dias 01/09/2018; 06/10/2018; 03/11/2018; 01/12/2018; e 05/01/2018.
+							    Serão 05 (cinco) datas de sorteio ao longo da promoção, de acordo com os resultados da extração da Loteria Federal do Brasil dos dias 01/09/2018; 06/10/2018; 03/11/2018; 01/12/2018; e 05/01/2019.
 						    </span>
 					    </div>
 				    </div>

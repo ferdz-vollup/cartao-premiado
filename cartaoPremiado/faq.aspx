@@ -12,7 +12,8 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Perguntas Frequentes - Cartão Besni</title>
+    <title>Promoção Cartão da Sorte Besni | Perguntas Frequentes</title>
+	<meta name="description" content="Se você está com dúvidas sobre a Promoção Cartão da Sorte Besni, dê uma olhada em nossas perguntas frequentes ou entre em contato com a gente."/>
 </head>
 
 <body id="faq">
@@ -47,7 +48,7 @@
             <p>01/08/2018 a 04/01/2019</p>
             <hr />
             <h3 class="basenine">Qual o período válido de compras para participar da promoção?</h3>
-            <div style="max-width:100%;overflow-x:auto">
+            <div style="max-width:100%;overflow-x:scroll">
             <p>
                 <table width="600" margin="2" cellspacing="1" cellpadding="1" border="1">
                     <tr>

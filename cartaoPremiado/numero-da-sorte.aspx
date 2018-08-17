@@ -11,7 +11,8 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Número da sorte - Cartão Besni</title>
+    <title>Promoção Cartão da Sorte Besni | Número da Sorte</title>
+	<meta name="description" content="Já realizou suas compras Besni? Então consulte os números da sorte dos seus cupons e veja quantas chances você tem de ganhar."/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 

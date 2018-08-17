@@ -12,7 +12,8 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Resultados - Cartão Besni</title>
+    <title>Promoção Cartão da Sorte Besni | Resultados</title>
+	<meta name="description" content="Confira os ganhadores da Promoção Cartão da Sorte Besni! Quem sabe você não foi sorteado? Realize compras Besni e aumente suas chances de ganhar."/>
 </head>
 
 <body id="resultados">

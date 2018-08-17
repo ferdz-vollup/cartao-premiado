@@ -12,7 +12,8 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Fale Conosco - Cartão Besni</title>
+    <title>Promoção Cartão da Sorte Besni | Fale Conosco</title>
+	<meta name="description" content="Caso tenha alguma dúvida ou precise de mais informações sobre a Promoção Cartão da Sorte Besni, envie-nos uma mensagem. Ficaremos felizes em ajudar."/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 

@@ -12,7 +12,8 @@
 <head runat="server">
     <besni:head runat="server" ID="head" />
 
-    <title>Onde estamos - Cartão Besni</title>
+    <title>Promoção Cartão da Sorte Besni | Onde Estamos</title>
+	<meta name="description" content="Encontre a Besni mais próxima de você, basta digitar o seu CEP. Temos 36 lojas espalhadas pelo Estado de São Paulo."/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
