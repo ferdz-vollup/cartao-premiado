@@ -26,8 +26,11 @@ namespace cartaoPremiado.admin
             objUtils = new utils();
             objBD = new bd();
 
+            ///objUtils.EnviaEmail("fernando.santos@vollup.com", "Esqueci a Senha | Promoção Besni", "conteudo", "", "", null, "no-reply@vollup.com", null);
+            objUtils.EnviaEmail("fernando.santos@vollup.com", "teste de envio","mensagem aqui","","",null, "naoresponda@lojasbesni.com.br","PROMOCAO");
+
             Contagem();
-            PegarResultado();
+          //  PegarResultado();
             ExbirResultado();
             resumoImportacao();
         }

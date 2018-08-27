@@ -67,7 +67,7 @@ namespace cartaoPremiado.admin
                     }
 
                     //Travar aprovações após atigir limite
-                    if (Convert.ToInt16(rs["TOTAL"]) > 9)
+                    if (Convert.ToInt16(rs["TOTAL"]) > 502)
 
                     {
                         trava = "disabled";
